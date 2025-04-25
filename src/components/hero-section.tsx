@@ -58,7 +58,7 @@ export function HeroSection() {
               </div>
               <h2 className={`text-xl sm:text-2xl font-bold uppercase ${lexend.className}`}>Skills</h2>
             </div>
-          </Link>
+          </Link> 
           
           {/* Projects Tile */}
           <Link href="/projects" className="bg-gradient-to-br from-amber-200/30 to-amber-400/40 hover:from-amber-200/40 hover:to-amber-400/50 text-card-foreground p-4 flex flex-col justify-center items-center transition-colors border border-border/20 rounded-lg group">
@@ -72,11 +72,11 @@ export function HeroSection() {
           </Link>
           
           {/* Experience Tile */}
-          <Link href="/experience" className="bg-gradient-to-br from-cyan-300/30 to-teal-400/40 hover:from-cyan-300/40 hover:to-teal-400/50 text-card-foreground p-4 flex flex-col justify-center items-center transition-colors border border-border/20 rounded-lg group">
+          <Link href="/experience" className="bg-gradient-to-br from-purple-300/30 to-violet-400/40 hover:from-purple-300/40 hover:to-violet-400/50 text-card-foreground p-4 flex flex-col justify-center items-center transition-colors border border-border/20 rounded-lg group">
             <div className="flex flex-col items-center gap-2 sm:gap-3">
               <div className="relative">
-                <Briefcase className="w-14 h-14 sm:w-16 sm:h-16 text-cyan-500/90 group-hover:scale-110 transition-transform duration-300" />
-                <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-cyan-400/80 rounded-full animate-ping opacity-75"></div>
+                <Briefcase className="w-14 h-14 sm:w-16 sm:h-16 text-purple-500/90 group-hover:scale-110 transition-transform duration-300" />
+                <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-purple-400/80 rounded-full animate-ping opacity-75"></div>
               </div>
               <h2 className={`text-xl sm:text-2xl font-bold uppercase ${lexend.className}`}>Experience</h2>
             </div>
@@ -138,11 +138,11 @@ export function HeroSection() {
           </div>
           
           {/* Right Side - Experience */}
-          <Link href="/experience" className="bg-gradient-to-br from-cyan-300/30 to-teal-400/40 hover:from-cyan-300/40 hover:to-teal-400/50 text-card-foreground p-6 md:p-8 flex flex-col justify-center items-center transition-colors border border-border/20 col-span-2 row-span-5 rounded-lg group">
+          <Link href="/experience" className="bg-gradient-to-br from-purple-300/30 to-violet-400/40 hover:from-purple-300/40 hover:to-violet-400/50 text-card-foreground p-6 md:p-8 flex flex-col justify-center items-center transition-colors border border-border/20 col-span-2 row-span-5 rounded-lg group">
             <div className="flex flex-col items-center gap-3 md:gap-4">
               <div className="relative">
-                <Briefcase className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 text-cyan-500/90 group-hover:scale-110 transition-transform duration-300" />
-                <div className="absolute -bottom-1 -left-1 w-3 h-3 md:w-4 md:h-4 bg-cyan-400/80 rounded-full animate-ping opacity-75"></div>
+                <Briefcase className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 text-purple-500/90 group-hover:scale-110 transition-transform duration-300" />
+                <div className="absolute -bottom-1 -left-1 w-3 h-3 md:w-4 md:h-4 bg-purple-400/80 rounded-full animate-ping opacity-75"></div>
               </div>
               <h2 className={`text-2xl md:text-3xl lg:text-4xl font-bold uppercase ${lexend.className}`}>Experience</h2>
             </div>
