@@ -16,7 +16,7 @@ export default function ContactPage() {
 
   function validate() {
     let valid = true;
-    let errs = { name: "", email: "", message: "" };
+    const errs = { name: "", email: "", message: "" };
     if (!form.name.trim()) {
       errs.name = "Name is required.";
       valid = false;
@@ -67,7 +67,7 @@ export default function ContactPage() {
         transition={{ duration: 0.4 }}
       >
         <h1 className={`mt-12 text-3xl sm:text-4xl md:text-5xl font-bold uppercase text-center ${lexend.className}`}>Contact Me</h1>
-        <p className={`mt-4 text-base sm:text-lg md:text-xl text-center text-muted-foreground ${outfit.className}`}>Let's connect and create something amazing together.</p>
+        <p className={`mt-4 text-base sm:text-lg md:text-xl text-center text-muted-foreground ${outfit.className}`}>Let&apos;s connect and create something amazing together.</p>
         <form onSubmit={handleSubmit} className={`mt-10 max-w-lg mx-auto flex flex-col gap-6 bg-background border border-border rounded-xl shadow-md p-6 ${outfit.className}`}>
           <div>
             <label className={`block mb-1 font-semibold ${outfit.className}`}>Name</label>

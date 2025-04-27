@@ -7,6 +7,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Footer } from "@/components/ui/footer";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const lexend = Lexend({ subsets: ["latin"] });
 const outfit = Outfit({ subsets: ["latin"] });
@@ -42,11 +43,11 @@ export default function SkillsPage() {
             <span className={`mt-2 text-xs opacity-0 group-hover:opacity-100 transition-opacity bg-background px-2 py-1 rounded shadow text-foreground ${lexend.className}`}>C++</span>
           </div>
           <div className="group flex flex-col items-center">
-            <img src="/csharp.svg" alt="C#" width={36} height={36} className={svgClass} />
+            <Image src="/csharp.svg" alt="C#" width={36} height={36} className={svgClass} unoptimized />
             <span className={`mt-2 text-xs opacity-0 group-hover:opacity-100 transition-opacity bg-background px-2 py-1 rounded shadow text-foreground ${lexend.className}`}>C#</span>
           </div>
           <div className="group flex flex-col items-center">
-            <img src="/java.svg" alt="Java" width={36} height={36} className={svgClass} />
+            <Image src="/java.svg" alt="Java" width={36} height={36} className={svgClass} unoptimized />
             <span className={`mt-2 text-xs opacity-0 group-hover:opacity-100 transition-opacity bg-background px-2 py-1 rounded shadow text-foreground ${lexend.className}`}>Java</span>
           </div>
           <div className="group flex flex-col items-center">
@@ -73,7 +74,7 @@ export default function SkillsPage() {
         <h2 className={`mt-12 mb-8 text-2xl sm:text-3xl font-semibold text-center ${lexend.className}`}>Frameworks, Libraries, and Engines</h2>
         <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-x-0 gap-y-4 justify-items-center mx-auto">
           <div className="group flex flex-col items-center">
-            <img src="/unity.svg" alt="Unity" width={36} height={36} className={svgClass} />
+            <Image src="/unity.svg" alt="Unity" width={36} height={36} className={svgClass} unoptimized />
             <span className={`mt-2 text-xs opacity-0 group-hover:opacity-100 transition-opacity bg-background px-2 py-1 rounded shadow text-foreground ${lexend.className}`}>Unity</span>
           </div>
           <div className="group flex flex-col items-center">
@@ -81,11 +82,11 @@ export default function SkillsPage() {
             <span className={`mt-2 text-xs opacity-0 group-hover:opacity-100 transition-opacity bg-background px-2 py-1 rounded shadow text-foreground ${lexend.className}`}>React</span>
           </div>
           <div className="group flex flex-col items-center">
-            <img src="/next.svg" alt="Next.js" width={36} height={36} className={svgClass} />
+            <Image src="/next.svg" alt="Next.js" width={36} height={36} className={svgClass} unoptimized />
             <span className={`mt-2 text-xs opacity-0 group-hover:opacity-100 transition-opacity bg-background px-2 py-1 rounded shadow text-foreground ${lexend.className}`}>Next.js</span>
           </div>
           <div className="group flex flex-col items-center">
-            <img src="/tailwind.svg" alt="Tailwind CSS" width={36} height={36} className={svgClass} />
+            <Image src="/tailwind.svg" alt="Tailwind CSS" width={36} height={36} className={svgClass} unoptimized />
             <span className={`mt-2 text-xs opacity-0 group-hover:opacity-100 transition-opacity bg-background px-2 py-1 rounded shadow text-foreground ${lexend.className}`}>Tailwind CSS</span>
           </div>
         </div>
@@ -108,7 +109,7 @@ export default function SkillsPage() {
             <span className={`mt-2 text-xs opacity-0 group-hover:opacity-100 transition-opacity bg-background px-2 py-1 rounded shadow text-foreground ${lexend.className}`}>MySQL</span>
           </div>
           <div className="group flex flex-col items-center">
-            <img src="/vercel.svg" alt="Vercel" width={36} height={36} className={svgClass} />
+            <Image src="/vercel.svg" alt="Vercel" width={36} height={36} className={svgClass} unoptimized />
             <span className={`mt-2 text-xs opacity-0 group-hover:opacity-100 transition-opacity bg-background px-2 py-1 rounded shadow text-foreground ${lexend.className}`}>Vercel</span>
           </div>
           <div className="group flex flex-col items-center">

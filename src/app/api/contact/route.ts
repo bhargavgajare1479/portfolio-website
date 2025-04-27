@@ -25,7 +25,7 @@ export async function POST(req: Request) {
       html: `<p><b>Name:</b> ${name}</p><p><b>Email:</b> ${email}</p><p>${message.replace(/\n/g, '<br>')}</p>`
     });
     return NextResponse.json({ ok: true });
-  } catch (err) {
+  } catch {
     return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
   }
 } 
