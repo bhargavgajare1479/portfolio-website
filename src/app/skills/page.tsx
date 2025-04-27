@@ -6,6 +6,7 @@ import { SiC, SiCplusplus, SiPython, SiHtml5, SiCss3, SiJavascript, SiTypescript
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Footer } from "@/components/ui/footer";
+import { motion } from "framer-motion";
 
 const lexend = Lexend({ subsets: ["latin"] });
 const outfit = Outfit({ subsets: ["latin"] });
@@ -22,7 +23,12 @@ export default function SkillsPage() {
   return (
     <>
       <Navbar lexend={lexend} ThemeToggle={ThemeToggle} />
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-8">
+      <motion.div
+        className="max-w-screen-xl mx-auto px-4 sm:px-8"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
+      >
         <h1 className={`mt-12 text-3xl sm:text-4xl md:text-5xl font-bold uppercase text-center ${lexend.className}`}>Skills</h1>
         <p className={`mt-4 text-base sm:text-lg md:text-xl text-center text-muted-foreground ${outfit.className}`}>The tools I learnt— and the instincts I built along the way.</p>
         <h2 className={`mt-10 mb-8 text-2xl sm:text-3xl font-semibold text-center ${lexend.className}`}>Programming Languages</h2>
@@ -110,7 +116,7 @@ export default function SkillsPage() {
             <span className={`mt-2 text-xs opacity-0 group-hover:opacity-100 transition-opacity bg-background px-2 py-1 rounded shadow text-foreground ${lexend.className}`}>Google Cloud</span>
           </div>
         </div>
-      </div>
+      </motion.div>
       <Footer />
     </>
   );

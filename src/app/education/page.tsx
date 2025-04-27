@@ -1,9 +1,11 @@
+"use client"
 import { Navbar } from "@/components/ui/navbar";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Lexend, Outfit } from "next/font/google";
 import { Card } from "@/components/ui/card";
 import educationData from "@/lib/education.json";
 import { Footer } from "@/components/ui/footer";
+import { motion } from "framer-motion";
 
 const lexend = Lexend({ subsets: ["latin"] });
 const outfit = Outfit({ subsets: ["latin"] });
@@ -20,7 +22,12 @@ export default function EducationPage() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar lexend={lexend} ThemeToggle={ThemeToggle} />
-      <div className="flex-1 w-full max-w-screen-xl mx-auto px-4 sm:px-8 flex flex-col">
+      <motion.div
+        className="flex-1 w-full max-w-screen-xl mx-auto px-4 sm:px-8 flex flex-col"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
+      >
         <h1 className={`mt-12 text-3xl sm:text-4xl md:text-5xl font-bold uppercase text-center ${lexend.className}`}>Education</h1>
         <p className={`mt-4 text-base sm:text-lg md:text-xl text-center text-muted-foreground ${outfit.className}`}>Where it all began — and where I realized textbooks are just the warm-up...</p>
         <main className="mt-10 w-full flex flex-col items-center">
@@ -40,7 +47,7 @@ export default function EducationPage() {
             </div>
           </div>
         </main>
-      </div>
+      </motion.div>
       <Footer />
     </div>
   );

@@ -10,6 +10,9 @@ import {
   ArrowRight
 } from "lucide-react"
 import { Lexend, Outfit } from 'next/font/google'
+import { useState } from "react"
+import { useRouter } from "next/navigation"
+import { motion } from "framer-motion"
 
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Footer } from "@/components/ui/footer"
@@ -18,6 +21,30 @@ const lexend = Lexend({ subsets: ['latin'] })
 const outfit = Outfit({ subsets: ['latin'] })
 
 export function HeroSection() {
+  const [isFadingOut, setIsFadingOut] = useState(false)
+  const [pendingRoute, setPendingRoute] = useState<string | null>(null)
+  const router = useRouter()
+
+  // Animation variants
+  const fadeVariants = {
+    visible: { opacity: 1, transition: { duration: 0.4 } },
+    hidden: { opacity: 0, transition: { duration: 0.4 } }
+  }
+
+  // Handler for tile click
+  const handleTileClick = (href: string) => (e: React.MouseEvent) => {
+    e.preventDefault()
+    setPendingRoute(href)
+    setIsFadingOut(true)
+  }
+
+  // Animation complete handler
+  const handleAnimationComplete = () => {
+    if (isFadingOut && pendingRoute) {
+      router.push(pendingRoute)
+    }
+  }
+
   return (
     <div className="relative flex flex-col h-screen overflow-hidden">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -30,7 +57,13 @@ export function HeroSection() {
           </div>
         </div>
       </header>
-      <main className="flex-1 w-full h-[calc(100vh-3.5rem)]">
+      <motion.main
+        className="flex-1 w-full h-[calc(100vh-3.5rem)]"
+        initial="visible"
+        animate={isFadingOut ? "hidden" : "visible"}
+        variants={fadeVariants}
+        onAnimationComplete={handleAnimationComplete}
+      >
         <div className="md:hidden grid grid-cols-1 gap-3 p-3 h-full overflow-y-auto">
           <div className="bg-primary/10 text-foreground p-6 flex flex-col justify-center items-center border border-border/20 rounded-xl shadow-md">
             <h1 className={`text-2xl sm:text-3xl font-bold mb-1 text-center py-4 uppercase ${lexend.className}`}>Bhargav Gajare</h1>
@@ -98,7 +131,7 @@ export function HeroSection() {
         
         {/* Desktop/Laptop Layout */}
         <div className="hidden md:grid grid-cols-6 grid-rows-6 gap-2 h-full">
-          <Link href="/education" className="bg-gradient-to-br from-teal-300/30 to-teal-500/40 hover:from-teal-300/40 hover:to-teal-500/50 text-card-foreground p-6 md:p-8 flex flex-col justify-center items-center transition-colors border border-border/20 col-span-2 row-span-2 rounded-lg group">
+          <Link href="/education" onClick={handleTileClick("/education")} className="bg-gradient-to-br from-teal-300/30 to-teal-500/40 hover:from-teal-300/40 hover:to-teal-500/50 text-card-foreground p-6 md:p-8 flex flex-col justify-center items-center transition-colors border border-border/20 col-span-2 row-span-2 rounded-lg group">
             <div className="flex flex-col items-center gap-3 md:gap-4">
               <div className="relative">
                 <GraduationCap className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 text-teal-500/90 group-hover:scale-110 transition-transform duration-300" />
@@ -109,7 +142,7 @@ export function HeroSection() {
           </Link>
           
           {/* Top Right - Skills */}
-          <Link href="/skills" className="bg-gradient-to-br from-orange-300/30 to-orange-500/40 hover:from-orange-300/40 hover:to-orange-500/50 text-card-foreground p-6 md:p-8 flex flex-col justify-center items-center transition-colors border border-border/20 col-span-4 row-span-2 rounded-lg group">
+          <Link href="/skills" onClick={handleTileClick("/skills")} className="bg-gradient-to-br from-orange-300/30 to-orange-500/40 hover:from-orange-300/40 hover:to-orange-500/50 text-card-foreground p-6 md:p-8 flex flex-col justify-center items-center transition-colors border border-border/20 col-span-4 row-span-2 rounded-lg group">
             <div className="flex flex-row items-center gap-3 md:gap-4">
               <div className="relative">
                 <Code className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 text-orange-500/90 group-hover:scale-110 transition-transform duration-300" />
@@ -120,7 +153,7 @@ export function HeroSection() {
           </Link>
           
           {/* Middle Left - Projects */}
-          <Link href="/projects" className="bg-gradient-to-br from-amber-200/30 to-amber-400/40 hover:from-amber-200/40 hover:to-amber-400/50 text-card-foreground p-6 md:p-8 flex flex-col justify-center items-center transition-colors border border-border/20 col-span-2 row-span-3 rounded-lg group">
+          <Link href="/projects" onClick={handleTileClick("/projects")} className="bg-gradient-to-br from-amber-200/30 to-amber-400/40 hover:from-amber-200/40 hover:to-amber-400/50 text-card-foreground p-6 md:p-8 flex flex-col justify-center items-center transition-colors border border-border/20 col-span-2 row-span-3 rounded-lg group">
             <div className="flex flex-col items-center gap-3 md:gap-4">
               <div className="relative">
                 <FolderGit2 className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 text-amber-500/90 group-hover:rotate-6 transition-transform duration-300" />
@@ -139,7 +172,7 @@ export function HeroSection() {
           </div>
           
           {/* Right Side - Experience */}
-          <Link href="/experience" className="bg-gradient-to-br from-purple-300/30 to-violet-400/40 hover:from-purple-300/40 hover:to-violet-400/50 text-card-foreground p-6 md:p-8 flex flex-col justify-center items-center transition-colors border border-border/20 col-span-2 row-span-5 rounded-lg group">
+          <Link href="/experience" onClick={handleTileClick("/experience")} className="bg-gradient-to-br from-purple-300/30 to-violet-400/40 hover:from-purple-300/40 hover:to-violet-400/50 text-card-foreground p-6 md:p-8 flex flex-col justify-center items-center transition-colors border border-border/20 col-span-2 row-span-5 rounded-lg group">
             <div className="flex flex-col items-center gap-3 md:gap-4">
               <div className="relative">
                 <Briefcase className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 text-purple-500/90 group-hover:scale-110 transition-transform duration-300" />
@@ -150,7 +183,7 @@ export function HeroSection() {
           </Link>
           
           {/* Bottom Row - Contact */}
-          <Link href="/contact" className="bg-gradient-to-br from-blue-300/30 to-cyan-400/40 hover:from-blue-300/40 hover:to-cyan-400/50 text-card-foreground p-6 md:p-8 flex flex-col justify-center items-center transition-colors border border-border/20 col-span-4 row-span-2 rounded-lg group">
+          <Link href="/contact" onClick={handleTileClick("/contact")} className="bg-gradient-to-br from-blue-300/30 to-cyan-400/40 hover:from-blue-300/40 hover:to-cyan-400/50 text-card-foreground p-6 md:p-8 flex flex-col justify-center items-center transition-colors border border-border/20 col-span-4 row-span-2 rounded-lg group">
             <div className="flex items-center gap-4 lg:gap-6">
               <div className="relative">
                 <Mail className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 text-blue-500/90 group-hover:scale-110 transition-transform duration-300" />
@@ -161,7 +194,7 @@ export function HeroSection() {
             </div>
           </Link>
         </div>
-      </main>
+      </motion.main>
       <Footer />
     </div>
   )

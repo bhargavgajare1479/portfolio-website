@@ -4,6 +4,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { Lexend, Outfit } from "next/font/google";
 import { useState } from "react";
 import { Footer } from "@/components/ui/footer";
+import { motion } from "framer-motion";
 
 const lexend = Lexend({ subsets: ["latin"] });
 const outfit = Outfit({ subsets: ["latin"] });
@@ -59,7 +60,12 @@ export default function ContactPage() {
   return (
     <>
       <Navbar lexend={lexend} ThemeToggle={ThemeToggle} />
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-8">
+      <motion.div
+        className="max-w-screen-xl mx-auto px-4 sm:px-8"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
+      >
         <h1 className={`mt-12 text-3xl sm:text-4xl md:text-5xl font-bold uppercase text-center ${lexend.className}`}>Contact Me</h1>
         <p className={`mt-4 text-base sm:text-lg md:text-xl text-center text-muted-foreground ${outfit.className}`}>Let's connect and create something amazing together.</p>
         <form onSubmit={handleSubmit} className={`mt-10 max-w-lg mx-auto flex flex-col gap-6 bg-background border border-border rounded-xl shadow-md p-6 ${outfit.className}`}>
@@ -95,7 +101,7 @@ export default function ContactPage() {
           <button type="submit" className={`mt-2 px-6 py-2 rounded bg-primary text-primary-foreground font-bold ${outfit.className}`}>Submit</button>
           {status && <p className={`text-center mt-2 text-sm ${outfit.className}`}>{status}</p>}
         </form>
-      </div>
+      </motion.div>
       <div className="mt-24">
         <Footer />
       </div>
