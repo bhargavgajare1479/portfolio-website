@@ -1,0 +1,20 @@
+[
+  {
+    "designation": "Unity Developer",
+    "company": "Vighnesh Inc.",
+    "tenure": "June 2024 - Present",
+    "skills": ["Unity", "Firebase", "Git", "GitHub", "Figma"]
+  },
+  {
+    "designation": "Software Developer",
+    "company": "Vighnesh Inc.",
+    "tenure": "March 2023 - Jan 2024",
+    "skills": ["Unity", "HTML", "CSS", "PHP", "Figma", "Git", "GitHub"]
+  },
+  {
+    "designation": "Summer Intern",
+    "company": "Vighnesh Inc.",
+    "tenure": "June 2023 - July 2023",
+    "skills": ["Unity", "Arduino", "Python"]
+  }
+] 
