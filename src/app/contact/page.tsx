@@ -96,6 +96,9 @@ export default function ContactPage() {
           {status && <p className={`text-center mt-2 text-sm ${outfit.className}`}>{status}</p>}
         </form>
       </div>
+      <div className="mt-24">
+        <Footer />
+      </div>
     </>
   );
 } 

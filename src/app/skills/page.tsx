@@ -5,6 +5,7 @@ import { Lexend, Outfit } from "next/font/google";
 import { SiC, SiCplusplus, SiPython, SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiFirebase, SiGit, SiGithub, SiMysql, SiGooglecloud } from "react-icons/si";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { Footer } from "@/components/ui/footer";
 
 const lexend = Lexend({ subsets: ["latin"] });
 const outfit = Outfit({ subsets: ["latin"] });
@@ -110,6 +111,7 @@ export default function SkillsPage() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 } 

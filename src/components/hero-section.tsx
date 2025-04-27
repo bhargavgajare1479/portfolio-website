@@ -12,6 +12,7 @@ import {
 import { Lexend, Outfit } from 'next/font/google'
 
 import { ThemeToggle } from "@/components/theme-toggle"
+import { Footer } from "@/components/ui/footer"
 
 const lexend = Lexend({ subsets: ['latin'] })
 const outfit = Outfit({ subsets: ['latin'] })
@@ -161,6 +162,7 @@ export function HeroSection() {
           </Link>
         </div>
       </main>
+      <Footer />
     </div>
   )
 } 
