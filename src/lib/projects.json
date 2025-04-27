@@ -1,0 +1,16 @@
+[
+  {
+    "name": "SerenitySphere",
+    "techstack": ["Unity", "C#", "OpenXR", "Meta Quest 3"],
+    "description": "In fast-paced cities like Mumbai, stress, anxiety, and chronic pain are rising, while traditional treatments have limitations. SerenitySphere is an immersive VR-based therapy solution with spatial audio, guided meditation, mindful games, and daily affirmations. It provides a safe, drug-free and engaging way to support mental wellness & pain relief.",
+    "github": "https://github.com/bhargavgajare1479/SerenitySphere",
+    "website": " "
+  },
+  {
+    "name": "HomewiseVision",
+    "techstack": ["Unity", "Vuforia", "C#", "Firebase", "Python", "Next.js", "TailwindCSS"],
+    "description": "AR-based app that helps users visualize and customize house designs using marker-based scanning. It allows free movement inside the 3D model, furniture placement, and real-time cost estimation. Designed for early planning, it ensures smarter decisions, faster execution, and a more engaging home-building experience.",
+    "github": "https://github.com/bhargavgajare1479/HomewiseVision",
+    "website": "https://homewise-vision-prod.vercel.app/"
+  }
+] 
