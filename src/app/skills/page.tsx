@@ -31,7 +31,7 @@ export default function SkillsPage() {
         transition={{ duration: 0.4 }}
       >
         <h1 className={`mt-12 text-3xl sm:text-4xl md:text-5xl font-bold uppercase text-center ${lexend.className}`}>Skills</h1>
-        <p className={`mt-4 text-base sm:text-lg md:text-xl text-center text-muted-foreground ${outfit.className}`}>The tools I learnt— and the instincts I built along the way.</p>
+        <p className={`mt-4 text-base sm:text-lg md:text-xl text-center text-muted-foreground ${outfit.className}`}>The tools I learnt — and the instincts I built along the way.</p>
         <h2 className={`mt-10 mb-8 text-2xl sm:text-3xl font-semibold text-center ${lexend.className}`}>Programming Languages</h2>
         <div className="mt-6 grid grid-cols-3 gap-x-0 gap-y-4 justify-items-center mx-auto">
           <div className="group flex flex-col items-center">
@@ -43,7 +43,7 @@ export default function SkillsPage() {
             <span className={`mt-2 text-xs opacity-0 group-hover:opacity-100 transition-opacity bg-background px-2 py-1 rounded shadow text-foreground ${lexend.className}`}>C++</span>
           </div>
           <div className="group flex flex-col items-center">
-            <Image src="/csharp.svg" alt="C#" width={36} height={36} className={svgClass} unoptimized />
+            <Image src={resolvedTheme === "dark" ? "/csharp-dark.svg" : "/csharp-light.svg"} alt="C#" width={36} height={36} className="object-contain" unoptimized />
             <span className={`mt-2 text-xs opacity-0 group-hover:opacity-100 transition-opacity bg-background px-2 py-1 rounded shadow text-foreground ${lexend.className}`}>C#</span>
           </div>
           <div className="group flex flex-col items-center">
