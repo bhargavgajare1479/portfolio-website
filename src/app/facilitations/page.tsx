@@ -1,5 +1,4 @@
 "use client"
-
 import { Navbar } from "@/components/ui/navbar";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Lexend, Outfit } from "next/font/google";

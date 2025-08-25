@@ -101,7 +101,7 @@ export function HeroSection() {
                 <BookOpen className="w-14 h-14 sm:w-16 sm:h-16 text-emerald-500/90 group-hover:scale-110 transition-transform duration-300" />
                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400/80 rounded-full animate-ping opacity-75"></div>
               </div>
-              <h2 className={`text-xl sm:text-2xl font-bold uppercase ${lexend.className}`}>Workshops</h2>
+              <h2 className={`text-xl sm:text-2xl font-bold uppercase ${lexend.className}`}>Facilitations</h2>
             </div>
           </Link>
           
@@ -170,7 +170,7 @@ export function HeroSection() {
                 <BookOpen className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 text-emerald-500/90 group-hover:scale-110 transition-transform duration-300" />
                 <div className="absolute -top-1 -right-1 w-3 h-3 md:w-4 md:h-4 bg-emerald-400/80 rounded-full animate-ping opacity-75"></div>
               </div>
-              <h2 className={`text-2xl md:text-3xl lg:text-4xl font-bold uppercase ${lexend.className}`}>Workshops</h2>
+              <h2 className={`text-2xl md:text-3xl lg:text-4xl font-bold uppercase text-center ${lexend.className}`}>Facilitations</h2>
             </div>
           </Link>
           
