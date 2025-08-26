@@ -18,7 +18,7 @@ export function Footer() {
         <div className="flex flex-row md:flex-row items-center gap-3 mt-2 md:mt-0">
           <Button asChild variant="outline" className="font-semibold border-border text-foreground hover:bg-accent hover:text-accent-foreground">
             <a
-              href="https://drive.google.com/file/d/1szUsqbevX89MYRiLe_CzxN0_sV0YnM8R/view?usp=drive_link"
+              href="https://drive.google.com/file/d/17XOV8f3DPUg6pKE0bvsZGPkrmd-tVJKL/view?usp=share_link"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Resume"

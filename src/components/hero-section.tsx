@@ -16,6 +16,7 @@ import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
 
 import { ThemeToggle } from "@/components/theme-toggle"
+import { Button } from "@/components/ui/button"
 
 const lexend = Lexend({ subsets: ['latin'] })
 const outfit = Outfit({ subsets: ['latin'] })
@@ -52,8 +53,22 @@ export function HeroSection() {
           <div className="flex items-center">
             <Link href="/" className={`font-bold text-xl uppercase ${lexend.className}`}>BG</Link>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <ThemeToggle />
+            <Button
+              asChild
+              variant="outline"
+              className="font-semibold border-border text-foreground hover:bg-accent hover:text-accent-foreground"
+            >
+              <a
+                href="https://drive.google.com/file/d/17XOV8f3DPUg6pKE0bvsZGPkrmd-tVJKL/view?usp=share_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Resume"
+              >
+                Resume
+              </a>
+            </Button>
           </div>
         </div>
       </header>
