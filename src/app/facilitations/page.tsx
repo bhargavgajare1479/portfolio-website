@@ -23,7 +23,7 @@ export default function FacilitationsPage() {
         transition={{ duration: 0.4 }}
       >
         <h1 className={`mt-12 text-3xl sm:text-4xl md:text-5xl font-bold uppercase text-center ${lexend.className}`}>Facilitations</h1>
-        <p className={`mt-4 text-base sm:text-lg md:text-xl text-center text-muted-foreground max-w-2xl mx-auto ${outfit.className}`}>Passing forward the lessons I've picked up along the way.</p>
+        <p className={`mt-4 text-base sm:text-lg md:text-xl text-center text-muted-foreground max-w-2xl mx-auto ${outfit.className}`}>Passing forward the lessons I have picked up along the way.</p>
         
         <div className="mt-16 grid grid-cols-1 gap-10">
           {facilitationsData.map((facilitation, index) => (
