@@ -1,8 +1,30 @@
 [
     {
-        "title": ""
+        "title": "[SEMINAR] Early Stage Entrepreneurs",
+        "conducted": "July, 2024",
+        "description": "Had the opportunity to deliver a seminar at Thakur College of Engineering and Technology, Kandivali (East), sharing insights on entrepreneurship, innovation, and the inspiring growth of Vighnesh Inc. - a leading VR & AR solutions provider making an impact across industries such as education, aviation, real estate, and media.",
+        "linkedin": "https://www.linkedin.com/posts/om-awadhoot_innovation-entrepreneurship-vr-ugcPost-7297332499595091968-aqiQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAACmraTQBHh8PFkl-_HliLQJ-7J7bkaN_5Tk",
+        "photo-dir": "./public/facilitations/early-stage-entrepreneurs"
     },
     {
-
+        "title": "[WORKSHOP] Git and GitHub Essentials",
+        "conducted": "June, 2025",
+        "description": "Conducted a workshop on Git and GitHub for the students of Tantraniketan, an educational organisation, which provided internship program for Polytechnic and Engineering students. This session empowered students with practical skills in version control, branching workflows, and open-source collaboration, preparing them to manage projects confidently and contribute to real-world repositories.",
+        "linkedin": "https://www.linkedin.com/posts/tantraniketan_tantraniketan-githubtraining-versioncontrol-activity-7347465226709098496-hHE4?utm_source=share&utm_medium=member_desktop&rcm=ACoAACmraTQBHh8PFkl-_HliLQJ-7J7bkaN_5Tk",
+        "photo-dir": "./public/facilitations/git-and-github-essentials"
+    },
+    {
+        "title": "[FACULTY DEVELOPMENT PROGRAM] Introduction to Augmented Reality and Virtual Reality",
+        "conducted": "July, 2025",
+        "description": "Conducted a Faculty Development Program (FDP) on leading technologies like Augmented Reality and Virtual Reality at Prestige Institute of Engineering, Management and Research. This program equipped faculty members with foundational knowledge and practical skills in AR and VR technologies, enabling them to integrate these cutting-edge tools into their curriculum and enhance the learning experience for students across various disciplines.",
+        "linkedin": "https://www.linkedin.com/posts/bhargavsg_ar-vr-xr-activity-7360392992983048192-EUkL?utm_source=share&utm_medium=member_desktop&rcm=ACoAACmraTQBHh8PFkl-_HliLQJ-7J7bkaN_5Tk",
+        "photo-dir": "./public/facilitations/introduction-to-ar-vr"
+    },
+    {
+        "title": "[WORKSHOP] GitHub for Beginners",
+        "conducted": "August, 2025",
+        "description": "Had the privilege to deliver a workshop for my juniors at Datta Meghe College of Engineering, Airoli, covering the essentials of GitHub. This session empowered students with practical skills in version control, preparing them to manage projects confidently and contribute to real-world repositories.",
+        "linkedin": "https://www.linkedin.com/posts/bhargavsg_github-versioncontrol-beyondbytes-activity-7366062242510843904-ylBv?utm_source=share&utm_medium=member_desktop&rcm=ACoAACmraTQBHh8PFkl-_HliLQJ-7J7bkaN_5Tk",
+        "photo-dir": "./public/facilitations/github-for-beginners"
     }
 ]
