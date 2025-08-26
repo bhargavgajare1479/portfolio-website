@@ -95,7 +95,7 @@ export function HeroSection() {
           </Link> 
           
           {/* Technical Workshops Tile */}
-          <Link href="/workshops" className="bg-gradient-to-br from-emerald-300/30 to-emerald-500/40 hover:from-emerald-300/40 hover:to-emerald-500/50 text-card-foreground p-4 flex flex-col justify-center items-center transition-colors border border-border/20 rounded-lg group">
+          <Link href="/facilitations" className="bg-gradient-to-br from-emerald-300/30 to-emerald-500/40 hover:from-emerald-300/40 hover:to-emerald-500/50 text-card-foreground p-4 flex flex-col justify-center items-center transition-colors border border-border/20 rounded-lg group">
             <div className="flex flex-col items-center gap-2 sm:gap-3">
               <div className="relative">
                 <BookOpen className="w-14 h-14 sm:w-16 sm:h-16 text-emerald-500/90 group-hover:scale-110 transition-transform duration-300" />
@@ -163,8 +163,8 @@ export function HeroSection() {
             </div>
           </Link>
           
-          {/* Technical Workshops */}
-          <Link href="/workshops" onClick={handleTileClick("/workshops")} className="bg-gradient-to-br from-emerald-300/30 to-emerald-500/40 hover:from-emerald-300/40 hover:to-emerald-500/50 text-card-foreground p-6 md:p-8 flex flex-col justify-center items-center transition-colors border border-border/20 col-span-2 row-span-3 rounded-lg group">
+          {/* Facilitations */}
+          <Link href="/facilitations" onClick={handleTileClick("/facilitations")} className="bg-gradient-to-br from-emerald-300/30 to-emerald-500/40 hover:from-emerald-300/40 hover:to-emerald-500/50 text-card-foreground p-6 md:p-8 flex flex-col justify-center items-center transition-colors border border-border/20 col-span-2 row-span-3 rounded-lg group">
             <div className="flex flex-col items-center gap-3 md:gap-4">
               <div className="relative">
                 <BookOpen className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 text-emerald-500/90 group-hover:scale-110 transition-transform duration-300" />
