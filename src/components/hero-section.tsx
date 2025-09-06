@@ -10,6 +10,7 @@ import {
   ArrowRight,
   BookOpen
 } from "lucide-react"
+import { Button } from "./ui/button"
 import { Lexend, Outfit } from 'next/font/google'
 import { useState } from "react"
 import { useRouter } from "next/navigation"
@@ -53,6 +54,16 @@ export function HeroSection() {
             <Link href="/" className={`font-bold text-xl uppercase ${lexend.className}`}>BG</Link>
           </div>
           <div className="flex items-center gap-2">
+            <Button asChild variant="outline" className="font-semibold border-border text-foreground hover:bg-accent hover:text-accent-foreground">
+            <a
+              href="https://drive.google.com/file/d/17XOV8f3DPUg6pKE0bvsZGPkrmd-tVJKL/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Resume"
+            >
+              Resume
+            </a>
+            </Button>
             <ThemeToggle />
           </div>
         </div>

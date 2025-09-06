@@ -29,9 +29,9 @@ export default function FacilitationsPage() {
           {facilitationsData.map((facilitation, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 1, delay: index * 0.1 }}
             >
               <Card className="overflow-hidden h-full bg-card/50 backdrop-blur max-w-4xl mx-auto">
                 <div className="p-8 space-y-6">
