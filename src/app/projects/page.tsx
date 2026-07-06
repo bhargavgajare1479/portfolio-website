@@ -1,5 +1,6 @@
 import { projects } from "@/lib/projects";
 import Link from "next/link";
+import { FaGithub, FaVideo, FaExternalLinkAlt, FaFilePdf } from "react-icons/fa";
 
 export default function ProjectsPage() {
   return (
@@ -16,18 +17,56 @@ export default function ProjectsPage() {
       <div className="w-full space-y-16">
         {projects.map((project) => (
           <div key={project.slug} className="border-t border-zinc-200 dark:border-zinc-800 pt-12 first:border-t-0 first:pt-0">
-            <div className="flex justify-between items-start mb-4">
-              <h2 className="font-heading text-4xl font-bold text-zinc-900 dark:text-zinc-100">{project.title}</h2>
-              {project.githubUrl && (
-                <a 
-                  href={project.githubUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-base font-medium bg-zinc-100 dark:bg-zinc-800 px-4 py-2 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
-                >
-                  GitHub ↗
-                </a>
-              )}
+            <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+              <div className="flex items-center gap-3 flex-wrap">
+                <h2 className="font-heading text-4xl font-bold text-zinc-900 dark:text-zinc-100">{project.title}</h2>
+                <div className="flex items-center gap-2.5">
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="GitHub Repository"
+                      className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white bg-zinc-100 dark:bg-zinc-800 p-3 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+                    >
+                      <FaGithub size={20} />
+                    </a>
+                  )}
+                  {project.demoVideoUrl && (
+                    <a
+                      href={project.demoVideoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Demo Video"
+                      className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white bg-zinc-100 dark:bg-zinc-800 p-3 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+                    >
+                      <FaVideo size={20} />
+                    </a>
+                  )}
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Live Demo"
+                      className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white bg-zinc-100 dark:bg-zinc-800 p-3 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+                    >
+                      <FaExternalLinkAlt size={16} />
+                    </a>
+                  )}
+                  {project.researchPaper && (
+                    <a
+                      href={project.researchPaper}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Research Paper"
+                      className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white bg-zinc-100 dark:bg-zinc-800 p-3 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+                    >
+                      <FaFilePdf size={20} />
+                    </a>
+                  )}
+                </div>
+              </div>
             </div>
 
             <p className="text-xl text-zinc-600 dark:text-zinc-300 mb-8 leading-relaxed max-w-3xl">

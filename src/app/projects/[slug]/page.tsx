@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { getProjectBySlug } from "@/lib/projects";
+import { FaGithub, FaVideo, FaExternalLinkAlt, FaFilePdf } from "react-icons/fa";
 
 // In Next.js 15+ App Router, params is a Promise
 export default async function ProjectPage({
@@ -16,19 +17,54 @@ export default async function ProjectPage({
 
   return (
     <main className="min-h-screen max-w-4xl mx-auto py-32 px-8 flex flex-col items-start">
-      <h1 className="font-heading text-5xl font-bold mb-4">{project.title}</h1>
-      
-      <div className="flex gap-4 mb-8">
-        {project.githubUrl && (
-          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
-            GitHub
-          </a>
-        )}
-        {project.liveUrl && (
-          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
-            Live Demo
-          </a>
-        )}
+      <div className="flex flex-wrap items-center gap-4 mb-8">
+        <h1 className="font-heading text-5xl font-bold">{project.title}</h1>
+        <div className="flex items-center gap-2.5">
+          {project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="GitHub Repository"
+              className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white bg-zinc-100 dark:bg-zinc-800 p-3 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+            >
+              <FaGithub size={20} />
+            </a>
+          )}
+          {project.demoVideoUrl && (
+            <a
+              href={project.demoVideoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Demo Video"
+              className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white bg-zinc-100 dark:bg-zinc-800 p-3 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+            >
+              <FaVideo size={20} />
+            </a>
+          )}
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Live Demo"
+              className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white bg-zinc-100 dark:bg-zinc-800 p-3 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+            >
+              <FaExternalLinkAlt size={16} />
+            </a>
+          )}
+          {project.researchPaper && (
+            <a
+              href={project.researchPaper}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Research Paper"
+              className="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white bg-zinc-100 dark:bg-zinc-800 p-3 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+            >
+              <FaFilePdf size={20} />
+            </a>
+          )}
+        </div>
       </div>
 
       <p className="text-xl text-zinc-600 dark:text-zinc-400 mb-12 max-w-2xl leading-relaxed">
@@ -56,7 +92,7 @@ export default async function ProjectPage({
           ))}
         </ul>
       </div>
-      
+
       <a href="/" className="mt-8 text-base sm:text-lg text-zinc-500 hover:text-black dark:hover:text-white transition-colors">
         ← Back to Home
       </a>
