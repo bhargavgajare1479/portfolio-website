@@ -32,7 +32,7 @@ export const projects: Project[] = [
     title: "Homewise Vision",
     keywords: ["Spatial Computing", "Cloud Architecture", "AR Visualization"],
     description: "HomewiseVision is an AR-based app that helps users visualize and customize house designs using marker-based scanning. It allows free movement inside the 3D model, furniture placement, and real-time cost estimation. Designed for early planning, it ensures smarter decisions, faster execution, and a more engaging home-building experience.",
-    techStack: ["C#", "Unity", "Firebase"],
+    techStack: ["C#", "Unity", "Firebase", "Vuforia Engine", "Python"],
     githubUrl: "https://github.com/bhargavgajare1479/HomewiseVision",
     liveUrl: "https://homewise-vision-prod.vercel.app",
     researchPaper: "https://www.irjet.net/archives/V11/i2/IRJET-V11I202.pdf",
@@ -47,7 +47,7 @@ export const projects: Project[] = [
     title: "SerenitySphere",
     keywords: ["Immersive Systems", "OpenXR", "Hardware Optimization"],
     description: "In fast-paced cities like Mumbai, stress, anxiety, and chronic pain are rising, while traditional treatments have limitations. SerenitySphere is an immersive VR-based therapy solution with spatial audio, guided meditation, mindful games, and daily affirmations. It provides a safe, drug-free and engaging way to support mental wellness & pain relief.",
-    techStack: ["C#", "Unity"],
+    techStack: ["C#", "Unity", "OpenXR", "XR Interaction Toolkit"],
     githubUrl: "https://github.com/bhargavgajare1479/SerenitySphere",
     demoVideoUrl: "https://drive.google.com/drive/folders/16oX4wzuZ6JkFNKWh57s4L51jT7_wjvY1?usp=drive_link",
     challenges: [
