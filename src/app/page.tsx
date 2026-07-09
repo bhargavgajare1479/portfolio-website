@@ -160,38 +160,40 @@ export default function Home() {
 
         {/* 5. Skills Block: 5th on mobile, Row 3 right on desktop */}
         <BentoCard id="skills" className="order-5 lg:order-5 lg:col-span-5 min-h-[300px] lg:min-h-[400px]">
-          <div className="flex h-full flex-col">
-            <h2 className="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Skills</h2>
+          <Link href="/skills" className="flex h-full flex-col group cursor-pointer">
+            <div className="flex h-full flex-col">
+              <h2 className="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Skills</h2>
 
-            <div className="mt-8 space-y-8 flex-1 overflow-y-auto pr-4">
-              <div className="flex flex-col">
-                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
-                  Core Programming Languages
-                </h3>
-                <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                  C#, Python, JavaScript, Java, SQL
-                </p>
-              </div>
+              <div className="mt-8 space-y-8 flex-1 overflow-y-auto pr-4">
+                <div className="flex flex-col">
+                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+                    Core Programming Languages
+                  </h3>
+                  <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                    C#, Python, JavaScript, Java, SQL
+                  </p>
+                </div>
 
-              <div className="flex flex-col">
-                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
-                  XR Stack
-                </h3>
-                <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                  Unity, OpenXR, XR Interaction Toolkit, Meta XR SDK, Microsoft MRTK, AR Foundation, Vuforia Engine
-                </p>
-              </div>
+                <div className="flex flex-col">
+                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+                    XR Stack
+                  </h3>
+                  <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                    Unity, OpenXR, XR Interaction Toolkit, Meta XR SDK, Microsoft MRTK, AR Foundation, Vuforia Engine
+                  </p>
+                </div>
 
-              <div className="flex flex-col">
-                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
-                  Backend Stack
-                </h3>
-                <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                  FastAPI, Firebase, Supabase, Express.js
-                </p>
+                <div className="flex flex-col">
+                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+                    Backend Stack
+                  </h3>
+                  <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                    FastAPI, Firebase, Supabase, Express.js
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
         </BentoCard>
 
         {/* 6. Blogs Block: 6th on mobile, equal 6/12 width in bottom row on desktop */}
