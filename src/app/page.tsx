@@ -17,10 +17,10 @@ export default function Home() {
         <BentoCard className="order-1 lg:order-1 lg:col-span-5 min-h-[250px] lg:min-h-[280px]">
           <div className="flex h-full flex-col justify-center">
             <h1 className="font-heading font-bold tracking-tight flex flex-col">
-              <span className="text-zinc-900 dark:text-zinc-400 font-semibold text-3xl sm:text-6xl lg:text-4xl xl:text-4xl leading-tight mt-1">
+              <span className="text-zinc-900 dark:text-zinc-100 font-semibold text-3xl sm:text-6xl lg:text-4xl xl:text-4xl leading-tight mt-1">
                 BHARGAV
               </span>
-              <span className="text-zinc-600 dark:text-zinc-100 text-5xl sm:text-8xl lg:text-6xl xl:text-7xl leading-none">
+              <span className="text-zinc-900 dark:text-zinc-100 text-5xl sm:text-8xl lg:text-6xl xl:text-7xl leading-none">
                 GAJARE
               </span>
             </h1>
