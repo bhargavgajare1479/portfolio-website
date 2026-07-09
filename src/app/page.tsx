@@ -178,7 +178,7 @@ export default function Home() {
                   XR Stack
                 </h3>
                 <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                  Unity, OpenXR, Meta XR SDK, Microsoft MRTK, AR Foundation, Vuforia Engine
+                  Unity, OpenXR, XR Interaction Toolkit, Meta XR SDK, Microsoft MRTK, AR Foundation, Vuforia Engine
                 </p>
               </div>
 

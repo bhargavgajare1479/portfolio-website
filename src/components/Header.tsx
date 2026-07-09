@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { ThemeToggle } from "./ThemeToggle";
 import { FaGithub, FaLinkedin, FaFileAlt, FaBars, FaTimes } from "react-icons/fa";
 
@@ -10,14 +11,34 @@ export function Header() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
-  // We only show section links if NOT on home page
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
+  // We only show section links if NOT on home page for desktop header
   const showSectionLinks = !isHome;
 
   return (
-    <header className="w-full max-w-[1600px] mx-auto px-6 lg:px-8 xl:px-16 py-8 flex items-center justify-between relative">
+    <header className="w-full max-w-[1600px] mx-auto px-6 lg:px-8 xl:px-16 py-8 flex items-center justify-between relative z-50">
       {/* Brand / Home Link */}
-      <Link href="/" className="font-heading font-bold text-2xl tracking-tight hover:opacity-80 transition-opacity z-50 relative">
+      <Link href="/" className="font-heading font-bold text-2xl tracking-tight hover:opacity-80 transition-opacity relative">
         BG
       </Link>
 
@@ -53,62 +74,95 @@ export function Header() {
         </div>
 
         {/* Tablet/Mobile Hamburger Button (Visible on < lg) */}
-        <div className="lg:hidden flex items-center gap-4 z-50 relative">
+        <div className="lg:hidden flex items-center gap-4 relative">
           <ThemeToggle />
           <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-zinc-800 dark:text-zinc-200"
-            aria-label="Toggle menu"
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setMobileMenuOpen((prev) => !prev);
+            }}
+            className="p-2 text-zinc-800 dark:text-zinc-200 focus:outline-none cursor-pointer"
+            aria-label="Open menu"
           >
-            {mobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            <FaBars size={24} />
           </button>
         </div>
       </nav>
 
-      {/* Tablet/Mobile Menu Drawer */}
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 flex justify-end lg:hidden">
-          {/* Backdrop */}
-          <div
-            className="absolute inset-0 bg-black/20 backdrop-blur-sm"
-            onClick={() => setMobileMenuOpen(false)}
-          />
+      {/* Tablet/Mobile Menu Drawer via Portal */}
+      {mounted &&
+        mobileMenuOpen &&
+        createPortal(
+          <div className="fixed inset-0 z-[99999] flex justify-end">
+            {/* Backdrop */}
+            <div
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+              onClick={(e) => {
+                e.stopPropagation();
+                setMobileMenuOpen(false);
+              }}
+            />
 
-          {/* Side Drawer */}
-          <div className="relative w-full sm:w-1/2 md:w-1/3 lg:w-1/4 h-full border-l border-zinc-200 dark:border-zinc-800  p-8 flex flex-col shadow-2xl overflow-y-auto">
-            <div className="mt-20 flex flex-col w-full text-xl font-heading font-medium">
-              {showSectionLinks && (
-                <div className="flex flex-col w-full border-b border-zinc-200 dark:border-zinc-800 pb-6 mb-6">
-                  <Link href="/#experience" onClick={() => setMobileMenuOpen(false)} className="w-full py-4 text-zinc-800 dark:text-zinc-200 hover:opacity-70 transition-opacity font-sans">
+            {/* Side Drawer */}
+            <div
+              className="relative w-[85vw] max-w-sm h-full bg-white dark:bg-zinc-900 border-l border-zinc-200 dark:border-zinc-800 p-8 flex flex-col shadow-2xl overflow-y-auto z-10"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Drawer Top Header with Close Button */}
+              <div className="flex items-center justify-between pb-6 border-b border-zinc-200 dark:border-zinc-800">
+                <span className="font-heading font-bold text-xl text-zinc-900 dark:text-zinc-100">Navigation</span>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setMobileMenuOpen(false);
+                  }}
+                  className="p-2 text-zinc-800 dark:text-zinc-200 hover:opacity-70 transition-opacity focus:outline-none cursor-pointer"
+                  aria-label="Close menu"
+                >
+                  <FaTimes size={24} />
+                </button>
+              </div>
+
+              <div className="mt-8 flex flex-col w-full text-lg font-heading font-medium">
+                <div className="flex flex-col w-full border-b border-zinc-200 dark:border-zinc-800 pb-6 mb-6 gap-2">
+                  <Link href="/#experience" onClick={() => setMobileMenuOpen(false)} className="w-full py-2.5 text-zinc-800 dark:text-zinc-200 hover:opacity-70 transition-opacity font-sans">
                     Experience
                   </Link>
-                  <Link href="/#projects" onClick={() => setMobileMenuOpen(false)} className="w-full py-4 text-zinc-800 dark:text-zinc-200 hover:opacity-70 transition-opacity font-sans">
+                  <Link href="/projects" onClick={() => setMobileMenuOpen(false)} className="w-full py-2.5 text-zinc-800 dark:text-zinc-200 hover:opacity-70 transition-opacity font-sans">
                     Projects
                   </Link>
-                  <Link href="/#blogs" onClick={() => setMobileMenuOpen(false)} className="w-full py-4 text-zinc-800 dark:text-zinc-200 hover:opacity-70 transition-opacity font-sans">
+                  <Link href="/education" onClick={() => setMobileMenuOpen(false)} className="w-full py-2.5 text-zinc-800 dark:text-zinc-200 hover:opacity-70 transition-opacity font-sans">
+                    Education
+                  </Link>
+                  <Link href="/#blogs" onClick={() => setMobileMenuOpen(false)} className="w-full py-2.5 text-zinc-800 dark:text-zinc-200 hover:opacity-70 transition-opacity font-sans">
                     Blogs
                   </Link>
                 </div>
-              )}
 
-              <div className="flex flex-col w-full">
-                <a href="" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 py-4 text-zinc-800 dark:text-zinc-200 hover:opacity-70 transition-opacity font-sans">
-                  <FaFileAlt size={24} className="text-zinc-500" />
-                  Resume
-                </a>
-                <a href="https://github.com/bhargavgajare1479" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 py-4 text-zinc-800 dark:text-zinc-200 hover:opacity-70 transition-opacity font-sans">
-                  <FaGithub size={24} className="text-zinc-500" />
-                  GitHub
-                </a>
-                <a href="https://linkedin.com/in/bhargavsg" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 py-4 text-zinc-800 dark:text-zinc-200 hover:opacity-70 transition-opacity font-sans">
-                  <FaLinkedin size={24} className="text-zinc-500" />
-                  LinkedIn
-                </a>
+                <div className="flex flex-col w-full gap-2">
+                  <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 py-2.5 text-zinc-800 dark:text-zinc-200 hover:opacity-70 transition-opacity font-sans">
+                    <FaFileAlt size={20} className="text-zinc-500" />
+                    Resume
+                  </a>
+                  <a href="https://github.com/bhargavgajare1479" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 py-2.5 text-zinc-800 dark:text-zinc-200 hover:opacity-70 transition-opacity font-sans">
+                    <FaGithub size={20} className="text-zinc-500" />
+                    GitHub
+                  </a>
+                  <a href="https://linkedin.com/in/bhargavsg" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 py-2.5 text-zinc-800 dark:text-zinc-200 hover:opacity-70 transition-opacity font-sans">
+                    <FaLinkedin size={20} className="text-zinc-500" />
+                    LinkedIn
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      )}
+          </div>,
+          document.body
+        )}
     </header>
   );
 }
+
+

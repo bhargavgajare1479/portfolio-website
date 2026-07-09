@@ -12,13 +12,13 @@ export default function NotFound() {
         The page you are looking for doesn't exist or has been moved.
       </p>
       
-      <Link 
+      <a 
         href="/"
         className="mt-10 flex items-center gap-3 px-8 py-4 bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 rounded-full font-medium transition-transform hover:-translate-y-1"
       >
         <FaArrowLeft size={16} />
         Back to Home
-      </Link>
+      </a>
     </div>
   );
 }
