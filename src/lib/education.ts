@@ -37,7 +37,7 @@ export const education: Education[] = [
         score: "Final Score: 86.97%",
         shortDescription: "Diploma in Computer Engineering • 86.97% • 2021 – 2024",
         achievements: [
-            "Homewise Vision Research Publication: Principal author of the spatial computing research paper \"HomewiseVision\" published in the International Research Journal of Engineering and Technology (IRJET), Volume 11, Issue 2.",
+            "Homewise Vision Research Publication: Principal author of the spatial computing research paper \"AR Application: Homewise Vision\" published in the International Research Journal of Engineering and Technology (IRJET), Volume 11, Issue 2.",
             "Technofest 2024 (3rd Place): Placed top-three in the competitive Capstone Project category for engineering execution.",
         ],
     },

@@ -29,7 +29,7 @@ export const projects: Project[] = [
   },
   {
     slug: "homewise-vision",
-    title: "Homewise Vision",
+    title: "AR Application: Homewise Vision",
     keywords: ["Spatial Computing", "Cloud Architecture", "AR Visualization"],
     description: "HomewiseVision is an AR-based app that helps users visualize and customize house designs using marker-based scanning. It allows free movement inside the 3D model, furniture placement, and real-time cost estimation. Designed for early planning, it ensures smarter decisions, faster execution, and a more engaging home-building experience.",
     techStack: ["C#", "Unity", "Firebase", "Vuforia Engine", "Python"],
