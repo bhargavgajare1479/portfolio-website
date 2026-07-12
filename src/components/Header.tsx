@@ -31,10 +31,10 @@ export function Header() {
           <div className="hidden lg:flex items-center gap-6">
             {showSectionLinks && (
               <>
-                <Link href="/#experience" className="text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors font-sans">
+                <Link href="/experience" className="text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors font-sans">
                   Experience
                 </Link>
-                <Link href="/#projects" className="text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors font-sans">
+                <Link href="/projects" className="text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors font-sans">
                   Projects
                 </Link>
                 <Link href="/#blogs" className="text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors font-sans">
@@ -79,7 +79,7 @@ export function Header() {
           {showSectionLinks && (
             <>
               <Link
-                href="/#experience"
+                href="/experience"
                 onClick={() => setMobileMenuOpen(false)}
                 className="py-2.5 text-base text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors font-sans"
               >

@@ -14,7 +14,15 @@ export function ThemeToggle() {
   }, []);
 
   if (!mounted) {
-    return <div className="w-9 h-9" aria-hidden="true" />; // Placeholder of the same size to prevent layout shift
+    return (
+      <button
+        className="p-2 rounded-md transition-colors text-zinc-500 opacity-70"
+        aria-label="Toggle theme"
+        disabled
+      >
+        <MdDarkMode size={18} />
+      </button>
+    );
   }
 
   return (

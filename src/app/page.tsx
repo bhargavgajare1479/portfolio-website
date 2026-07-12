@@ -60,9 +60,9 @@ export default function Home() {
         </BentoCard>
 
         {/* 3. Experience Block: 3rd on mobile, Row 1-2 right (spans 2 rows) on desktop */}
-        <BentoCard id="experience" className="order-3 lg:order-2 lg:col-span-7 lg:row-span-2 min-h-[300px] lg:min-h-[600px]">
-          <div className="flex h-full flex-col">
-            <h2 className="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Experience</h2>
+        <BentoCard id="experience" className="order-3 lg:order-2 lg:col-span-7 lg:row-span-2 min-h-[300px] lg:min-h-[600px] transition-all duration-300 hover:border-zinc-400 dark:hover:border-zinc-600">
+          <Link href="/experience" className="flex h-full flex-col group cursor-pointer">
+            <h2 className="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 group-hover:opacity-80 transition-opacity">Experience</h2>
 
             <div className="mt-8 flex-1 overflow-y-auto pr-4">
               <div className="relative ml-2 space-y-8">
@@ -130,7 +130,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         </BentoCard>
 
         {/* 4. Projects Block: 4th on mobile, Row 3 left on desktop */}
