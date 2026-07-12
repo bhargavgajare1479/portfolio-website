@@ -7,6 +7,7 @@ export interface Education {
     period: string;
     score: string;
     shortDescription: string;
+    overview: string;
     achievements: string[];
 }
 
@@ -17,9 +18,10 @@ export const education: Education[] = [
         shortInstitution: "NYSS’s Datta Meghe College of Engineering",
         degree: "B.E. in Artificial Intelligence and Data Science",
         location: "Navi Mumbai, India",
-        period: "Sept 2024 – Expected June 2027",
+        period: "Sept 2024 – Expected May 2027",
         score: "Current CGPA: 7.32",
         shortDescription: "B.E. Artificial Intelligence & Data Science • 7.32 CGPA • 2024 – 2027",
+        overview: "Pursuing Bachelor of Engineering in Artificial Intelligence and Data Science at Navi Mumbai, India. Focused on advanced algorithms, data engineering, spatial computing systems, and research publications alongside active leadership in national technical competitions.",
         achievements: [
             "International Research Selection: Authored an advanced systems/data research paper selected for international publication and presentation at an International Research Conference.",
             "AISPARK '25 (1st Place): Secured championship honors at the flagship mini-project competition hosted by the Student Hive of Artificial Intelligence and Data Science.",
@@ -36,6 +38,7 @@ export const education: Education[] = [
         period: "Oct 2021 – June 2024",
         score: "Final Score: 86.97%",
         shortDescription: "Diploma in Computer Engineering • 86.97% • 2021 – 2024",
+        overview: "Completed Diploma in Computer Engineering with distinction (86.97%) in Mumbai, India. Built strong foundational expertise in software engineering, object-oriented programming, and spatial computing research culminating in a published AR capstone project.",
         achievements: [
             "Homewise Vision Research Publication: Principal author of the spatial computing research paper \"AR Application: Homewise Vision\" published in the International Research Journal of Engineering and Technology (IRJET), Volume 11, Issue 2.",
             "Technofest 2024 (3rd Place): Placed top-three in the competitive Capstone Project category for engineering execution.",

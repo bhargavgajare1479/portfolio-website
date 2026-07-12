@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
+import { isMobileOrTablet } from "@/lib/device";
 
 export function Modal({ children }: { children: React.ReactNode }) {
   const router = useRouter();
@@ -24,9 +25,23 @@ export function Modal({ children }: { children: React.ReactNode }) {
   }
 
   useEffect(() => {
+    if (isMobileOrTablet()) {
+      window.location.replace(window.location.pathname);
+      return;
+    }
     if (!dialogRef.current?.open) {
       dialogRef.current?.showModal();
     }
+    const resetScroll = () => {
+      if (scrollContainerRef.current) {
+        scrollContainerRef.current.scrollTop = 0;
+        checkScroll();
+      }
+    };
+    resetScroll();
+    requestAnimationFrame(resetScroll);
+    const timer = setTimeout(resetScroll, 20);
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { skillCategories } from "@/lib/skills";
+import { SkillsContent } from "@/components/SkillsContent";
 import { Modal } from "@/components/Modal";
 
 export default function SkillsModal() {
@@ -12,28 +12,9 @@ export default function SkillsModal() {
           </p>
         </div>
 
-        {skillCategories.map((category) => (
-          <div key={category.slug} className="border-t border-zinc-200 dark:border-zinc-800 pt-8 first:border-t-0 first:pt-0">
-            <div className="flex flex-col gap-2 mb-6">
-              <h2 className="font-heading text-3xl font-bold text-zinc-900 dark:text-zinc-100">{category.title}</h2>
-              <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                {category.description}
-              </p>
-            </div>
-
-            <ul className="flex flex-wrap gap-2.5">
-              {category.skills.map((skill) => (
-                <li
-                  key={skill}
-                  className="bg-zinc-200/80 dark:bg-zinc-800/80 px-4 py-2 rounded-full text-base font-medium text-zinc-900 dark:text-zinc-100"
-                >
-                  {skill}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        <SkillsContent isModal={true} />
       </div>
     </Modal>
   );
 }
+
