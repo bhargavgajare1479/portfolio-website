@@ -223,36 +223,47 @@ export default function Home() {
 
         {/* 6. Blogs Block: 6th on mobile, equal 6/12 width in bottom row on desktop */}
         <BentoCard id="blogs" className="order-6 lg:order-6 lg:col-span-6 min-h-[250px] lg:min-h-[300px]">
-          <div className="flex h-full flex-col justify-center">
-            <h2 className="font-heading font-bold tracking-tight flex flex-col">
-              <span className="text-zinc-600 dark:text-zinc-400 font-semibold text-3xl sm:text-4xl lg:text-3xl xl:text-4xl leading-none">
-                BLOGS
-              </span>
-              <span className="text-zinc-900 dark:text-zinc-100 font-bold text-4xl sm:text-5xl lg:text-4xl xl:text-5xl leading-tight mt-1">
-                & INSIGHTS
-              </span>
-            </h2>
-            <p className="mt-8 text-xl sm:text-2xl font-normal text-zinc-600 dark:text-zinc-300 max-w-lg leading-relaxed">
-              Deep dives into spatial computing architectures, filesystem forensics, and low-level system performance optimization.
-            </p>
-          </div>
+          <TileLink href="/blogs" className="flex h-full flex-col group cursor-pointer">
+            <div className="flex h-full flex-col justify-center">
+              <h2 className="font-heading font-bold tracking-tight flex flex-col">
+                <span className="text-zinc-600 dark:text-zinc-400 font-semibold text-3xl sm:text-4xl lg:text-3xl xl:text-4xl leading-none">
+                  BLOGS
+                </span>
+                <span className="flex items-center gap-3 mt-1">
+                  <span className="text-zinc-900 dark:text-zinc-100 font-bold text-4xl sm:text-5xl lg:text-4xl xl:text-5xl leading-tight">
+                    & INSIGHTS
+                  </span>
+                  <FaLink className="w-5 h-5 sm:w-6 sm:h-6 text-zinc-900 dark:text-zinc-100 transition-transform duration-300" />
+                </span>
+              </h2>
+              <p className="mt-8 text-xl sm:text-2xl font-normal text-zinc-600 dark:text-zinc-300 max-w-lg leading-relaxed">
+                Deep dives into spatial computing architectures, filesystem forensics, and low-level system performance optimization.
+              </p>
+            </div>
+          </TileLink>
+
         </BentoCard>
 
         {/* 7. Contact Block: 7th on mobile, equal 6/12 width in bottom row on desktop */}
         <BentoCard id="contact" className="order-7 lg:order-7 lg:col-span-6 min-h-[250px] lg:min-h-[300px]">
-          <div className="flex h-full flex-col justify-center">
-            <h2 className="font-heading font-bold tracking-tight flex flex-col">
-              <span className="text-zinc-600 dark:text-zinc-400 font-semibold text-3xl sm:text-4xl lg:text-3xl xl:text-4xl leading-none">
-                GET
-              </span>
-              <span className="text-zinc-900 dark:text-zinc-100 font-bold text-4xl sm:text-5xl lg:text-4xl xl:text-5xl leading-tight mt-1">
-                IN TOUCH!
-              </span>
-            </h2>
-            <p className="mt-8 text-xl sm:text-2xl font-normal text-zinc-600 dark:text-zinc-300 max-w-lg leading-relaxed">
-              Open to discussions on systems architecture, XR engineering, and impactful collaborations.
-            </p>
-          </div>
+          <TileLink href="/contact" className="flex h-full flex-col group cursor-pointer">
+            <div className="flex h-full flex-col justify-center">
+              <h2 className="font-heading font-bold tracking-tight flex flex-col">
+                <span className="text-zinc-600 dark:text-zinc-400 font-semibold text-3xl sm:text-4xl lg:text-3xl xl:text-4xl leading-none">
+                  GET
+                </span>
+                <span className="flex items-center gap-3 mt-1">
+                  <span className="text-zinc-900 dark:text-zinc-100 font-bold text-4xl sm:text-5xl lg:text-4xl xl:text-5xl leading-tight">
+                    IN TOUCH!
+                  </span>
+                  <FaLink className="w-5 h-5 sm:w-6 sm:h-6 text-zinc-900 dark:text-zinc-100 transition-transform duration-300" />
+                </span>
+              </h2>
+              <p className="mt-8 text-xl sm:text-2xl font-normal text-zinc-600 dark:text-zinc-300 max-w-lg leading-relaxed">
+                Open to discussions on systems architecture, XR engineering, and impactful collaborations.
+              </p>
+            </div>
+          </TileLink>
         </BentoCard>
       </div>
     </main>

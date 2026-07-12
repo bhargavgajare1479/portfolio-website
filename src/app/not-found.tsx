@@ -7,14 +7,14 @@ export default function NotFound() {
       <h1 className="font-heading text-8xl md:text-9xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tighter">
         404
       </h1>
-      
+
       <p className="mt-6 text-xl font-medium text-zinc-600 dark:text-zinc-400 max-w-md">
-        The page you are looking for doesn't exist or has been moved.
+        The page you are looking for is still under construction. Kindly visit when it is ready!
       </p>
-      
-      <a 
+
+      <a
         href="/"
-        className="mt-10 flex items-center gap-3 px-8 py-4 bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 rounded-full font-medium transition-transform hover:-translate-y-1"
+        className="mt-10 flex items-center gap-3 px-8 py-4 bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 rounded-full font-medium transition-transform"
       >
         <FaArrowLeft size={16} />
         Back to Home
