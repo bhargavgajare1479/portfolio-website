@@ -1,12 +1,34 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { createContext, useContext, useEffect, useRef, useCallback } from "react";
 import Lenis from "lenis";
 import { usePathname } from "next/navigation";
+
+interface SmoothScrollContextValue {
+  stop: () => void;
+  start: () => void;
+}
+
+const SmoothScrollContext = createContext<SmoothScrollContextValue>({
+  stop: () => {},
+  start: () => {},
+});
+
+export function useSmoothScroll() {
+  return useContext(SmoothScrollContext);
+}
 
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
   const lenisRef = useRef<Lenis | null>(null);
   const pathname = usePathname();
+
+  const stop = useCallback(() => {
+    lenisRef.current?.stop();
+  }, []);
+
+  const start = useCallback(() => {
+    lenisRef.current?.start();
+  }, []);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -45,6 +67,10 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     }
   }, [pathname]);
 
-  return <>{children}</>;
+  return (
+    <SmoothScrollContext.Provider value={{ stop, start }}>
+      {children}
+    </SmoothScrollContext.Provider>
+  );
 }
 
