@@ -2,7 +2,7 @@ import { Skeleton } from "@/components/Skeleton";
 
 export default function ProjectDetailLoading() {
   return (
-    <main className="min-h-screen max-w-4xl mx-auto py-32 px-8 flex flex-col items-start w-full">
+    <main className="flex-1 max-w-4xl mx-auto py-32 px-8 flex flex-col items-start w-full">
       <div className="flex flex-wrap items-center gap-4 mb-8 w-full">
         <Skeleton className="h-12 w-64" />
         <div className="flex items-center gap-2.5">

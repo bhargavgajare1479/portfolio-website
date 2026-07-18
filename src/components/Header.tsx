@@ -37,7 +37,7 @@ export function Header() {
                 <Link href="/projects" className="text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors font-sans">
                   Projects
                 </Link>
-                <Link href="/#blogs" className="text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors font-sans">
+                <Link href="/blogs" className="text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors font-sans">
                   Blogs
                 </Link>
               </>
@@ -100,7 +100,7 @@ export function Header() {
                 Education
               </Link>
               <Link
-                href="/#blogs"
+                href="/blogs"
                 onClick={() => setMobileMenuOpen(false)}
                 className="py-2.5 text-base text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors font-sans"
               >

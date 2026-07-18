@@ -16,7 +16,7 @@ export default async function ProjectPage({
   }
 
   return (
-    <main className="min-h-screen max-w-4xl mx-auto py-32 px-8 flex flex-col items-start">
+    <main className="flex-1 max-w-4xl mx-auto py-32 px-8 flex flex-col items-start">
       <div className="flex flex-wrap items-center gap-4 mb-8">
         <h1 className="font-heading text-5xl font-bold">{project.title}</h1>
         <div className="flex items-center gap-2.5">

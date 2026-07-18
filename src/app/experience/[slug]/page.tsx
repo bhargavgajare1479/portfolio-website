@@ -20,7 +20,7 @@ export default async function ExperienceDetailPage({ params }: { params: Promise
 
   if (exp) {
     return (
-      <main className="min-h-screen max-w-4xl mx-auto py-24 px-8 flex flex-col items-start w-full">
+      <main className="flex-1 max-w-4xl mx-auto py-24 px-8 flex flex-col items-start w-full">
         <Link
           href="/experience"
           className="mb-8 text-base font-medium text-zinc-500 hover:text-black dark:hover:text-white transition-colors"
@@ -79,7 +79,7 @@ export default async function ExperienceDetailPage({ params }: { params: Promise
 
   // Session rendering
   return (
-    <main className="min-h-screen max-w-4xl mx-auto py-24 px-8 flex flex-col items-start w-full">
+    <main className="flex-1 max-w-4xl mx-auto py-24 px-8 flex flex-col items-start w-full">
       <Link
         href="/experience"
         className="mb-8 text-base font-medium text-zinc-500 hover:text-black dark:hover:text-white transition-colors"

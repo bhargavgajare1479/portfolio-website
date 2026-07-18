@@ -21,10 +21,12 @@ export function TileLink({ href, className, children }: TileLinkProps) {
     }
   };
 
+  const isStandaloneRoute = href.startsWith("/blogs");
+
   return (
     <Link
       href={href}
-      scroll={false}
+      scroll={isStandaloneRoute ? true : false}
       onClick={handleClick}
       className={className}
     >

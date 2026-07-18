@@ -31,7 +31,7 @@ export const experienceItems: ExperienceItem[] = [
     slug: "sorxn-llp-software-developer",
     company: "Sorxn LLP",
     role: "Software Developer",
-    period: "Jan 2026 - Present",
+    period: "Jan 2026 - Jun 2026",
     type: "Full Time",
     overview:
       "At Sorxn LLP, I architected and deployed production backend infrastructure from the ground up, designing scalable RESTful API systems and automated deployment workflows. Seeking greater sovereignty and performance, I constructed a self-hosted communication server infrastructure on hardened Linux systems backed by Cloudflare tunneling and routing. This transition successfully eliminated dependency on third-party managed platforms while ensuring secure remote management. Building on this core infrastructure, I designed a full-stack internal administration dashboard secured with end-to-end JSON Web Token (JWT) authentication and granular role-based access control (RBAC), empowering internal teams with efficient, reliable, and secure operational tooling.",

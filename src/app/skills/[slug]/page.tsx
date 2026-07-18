@@ -17,7 +17,7 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
   }
 
   return (
-    <main className="min-h-screen max-w-4xl mx-auto py-24 px-8 flex flex-col items-start w-full">
+    <main className="flex-1 max-w-4xl mx-auto py-24 px-8 flex flex-col items-start w-full">
       <Link href="/skills" className="mb-8 text-base font-medium text-zinc-500 hover:text-black dark:hover:text-white transition-colors">
         ← Back to all skills
       </Link>

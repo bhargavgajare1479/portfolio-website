@@ -15,7 +15,7 @@ export default async function EducationDetailPage({
   }
 
   return (
-    <main className="min-h-screen max-w-4xl mx-auto py-32 px-8 flex flex-col items-start">
+    <main className="flex-1 max-w-4xl mx-auto py-32 px-8 flex flex-col items-start">
       <div className="flex flex-col gap-2 mb-8">
         <h1 className="font-heading text-5xl font-bold">{item.institution}</h1>
         <p className="text-2xl font-semibold text-zinc-800 dark:text-zinc-200">{item.degree}</p>
