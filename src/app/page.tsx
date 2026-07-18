@@ -13,7 +13,7 @@ export default function Home() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 auto-rows-min">
 
         {/* 1. Name Block: 1st on mobile, top-left on desktop */}
-        <BentoCard className="order-1 lg:order-1 lg:col-span-5 min-h-[250px] lg:min-h-[280px]">
+        <BentoCard className="order-1 lg:order-1 lg:col-span-5 min-h-[250px] lg:min-h-[280px] hover:border-zinc-400 dark:hover:border-zinc-600">
           <div className="flex h-full flex-col justify-center">
             <h1 className="font-heading font-bold tracking-tight flex flex-col">
               <span className="text-zinc-900 dark:text-zinc-100 font-semibold text-3xl sm:text-6xl lg:text-4xl xl:text-4xl leading-tight mt-1">
@@ -30,7 +30,7 @@ export default function Home() {
         </BentoCard>
 
         {/* 2. Education Block: 2nd on mobile, bottom-left (under Name) on desktop */}
-        <BentoCard id="education" className="order-2 lg:order-3 lg:col-span-5 min-h-[250px] lg:min-h-[280px]">
+        <BentoCard id="education" className="order-2 lg:order-3 lg:col-span-5 min-h-[250px] lg:min-h-[280px] hover:border-zinc-400 dark:hover:border-zinc-600">
           <TileLink href="/education" className="flex h-full flex-col group cursor-pointer">
             <div className="flex h-full flex-col justify-center">
               <div className="flex items-center gap-3">
@@ -181,7 +181,7 @@ export default function Home() {
         </BentoCard>
 
         {/* 5. Skills Block: 5th on mobile, Row 3 right on desktop */}
-        <BentoCard id="skills" className="order-5 lg:order-5 lg:col-span-5 min-h-[300px] lg:min-h-[400px]">
+        <BentoCard id="skills" className="order-5 lg:order-5 lg:col-span-5 min-h-[300px] lg:min-h-[400px] hover:border-zinc-400 dark:hover:border-zinc-600">
           <TileLink href="/skills" className="flex h-full flex-col group cursor-pointer">
             <div className="flex h-full flex-col">
               <div className="flex items-center gap-3">
@@ -222,7 +222,7 @@ export default function Home() {
         </BentoCard>
 
         {/* 6. Blogs Block: 6th on mobile, equal 6/12 width in bottom row on desktop */}
-        <BentoCard id="blogs" className="order-6 lg:order-6 lg:col-span-6 min-h-[250px] lg:min-h-[300px]">
+        <BentoCard id="blogs" className="order-6 lg:order-6 lg:col-span-6 min-h-[250px] lg:min-h-[300px] hover:border-zinc-400 dark:hover:border-zinc-600">
           <TileLink href="/blogs" className="flex h-full flex-col group cursor-pointer">
             <div className="flex h-full flex-col justify-center">
               <h2 className="font-heading font-bold tracking-tight flex flex-col">
@@ -245,7 +245,7 @@ export default function Home() {
         </BentoCard>
 
         {/* 7. Contact Block: 7th on mobile, equal 6/12 width in bottom row on desktop */}
-        <BentoCard id="contact" className="order-7 lg:order-7 lg:col-span-6 min-h-[250px] lg:min-h-[300px]">
+        <BentoCard id="contact" className="order-7 lg:order-7 lg:col-span-6 min-h-[250px] lg:min-h-[300px] hover:border-zinc-400 dark:hover:border-zinc-600">
           <TileLink href="/contact" className="flex h-full flex-col group cursor-pointer">
             <div className="flex h-full flex-col justify-center">
               <h2 className="font-heading font-bold tracking-tight flex flex-col">

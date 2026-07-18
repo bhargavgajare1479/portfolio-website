@@ -96,7 +96,7 @@ export function Modal({ children }: { children: React.ReactNode }) {
   return (
     <dialog
       ref={dialogRef}
-      className="backdrop:bg-black/80 bg-white dark:bg-zinc-900 text-black dark:text-white rounded-2xl fixed inset-0 m-auto w-[80vw] h-[80vh] max-w-none max-h-none p-0 shadow-2xl overflow-hidden border border-zinc-200/50 dark:border-zinc-800/50"
+      className="backdrop:bg-black/80 bg-white dark:bg-zinc-900 text-black dark:text-white rounded-2xl fixed inset-0 m-auto w-[95vw] h-[95vh] max-w-none max-h-none p-0 shadow-2xl overflow-hidden border border-zinc-200/50 dark:border-zinc-800/50"
       onClose={onDismiss}
       onClick={onBackdropClick}
     >
