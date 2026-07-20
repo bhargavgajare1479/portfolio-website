@@ -10,7 +10,7 @@ export const skillCategories: SkillCategory[] = [
     slug: "core-programming-languages",
     title: "Core Programming Languages",
     description: "Primary general-purpose and programming languages that I have worked with across multiple domains.",
-    skills: ["C#", "Python", "JavaScript", "Java", "SQL"],
+    skills: ["C#", "Python", "JavaScript", "SQL"],
   },
   {
     slug: "xr-stack",

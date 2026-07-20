@@ -34,12 +34,12 @@ export const experienceItems: ExperienceItem[] = [
     period: "Jan 2026 - Jun 2026",
     type: "Full Time",
     overview:
-      "At Sorxn LLP, I architected and deployed production backend infrastructure from the ground up, designing scalable RESTful API systems and automated deployment workflows. Seeking greater sovereignty and performance, I constructed a self-hosted communication server infrastructure on hardened Linux systems backed by Cloudflare tunneling and routing. This transition successfully eliminated dependency on third-party managed platforms while ensuring secure remote management. Building on this core infrastructure, I designed a full-stack internal administration dashboard secured with end-to-end JSON Web Token (JWT) authentication and granular role-based access control (RBAC), empowering internal teams with efficient, reliable, and secure operational tooling.",
+      "At Sorxn LLP, I architected and prototyped a backend infrastructure from the ground up, designing scalable RESTful API systems and automated deployment workflows. Seeking greater sovereignty and performance, I constructed a self-hosted communication server infrastructure on hardened Linux systems backed by Cloudflare tunneling and routing. This transition successfully eliminated dependency on third-party managed platforms while ensuring secure remote management. Building on this core infrastructure, I designed a full-stack internal administration dashboard secured with end-to-end JSON Web Token (JWT) authentication and granular role-based access control (RBAC), empowering internal teams with efficient, reliable, and secure operational tooling.",
     achievements: [
-      "Architected production backend infrastructure from the ground up, designing RESTful API systems and deployment pipelines.",
+      "Built and validated a backend infrastructure prototype from the ground up - RESTful API systems, deployment pipelines, and PostgreSQL database integration, sustaining 150+ concurrent requests before handing off to production development.",
       "Built a self-hosted backend communication stack on Linux with Cloudflare-based traffic routing and tunnel-based secure remote access.",
       "Eliminated reliance on managed third-party services by routing internal tools through secure, self-hosted infrastructure.",
-      "Developed a full-stack internal administration platform leveraging the established production backend.",
+      "Developed a full-stack internal administration platform leveraging the established backend.",
       "Implemented robust security features including JWT-based authentication and role-based access control (RBAC).",
     ],
   },

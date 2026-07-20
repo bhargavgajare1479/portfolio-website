@@ -80,7 +80,7 @@ export default function Home() {
                   <div className="mt-3 flex flex-col gap-4">
                     <div>
                       <p className="text-lg sm:text-xl font-semibold text-zinc-800 dark:text-zinc-200">
-                        Project Intern (AR/VR) <span className="font-light text-base text-zinc-500 dark:text-zinc-400">| June 2026 - Present</span>
+                        Project Intern (AR/VR) <span className="font-light text-base text-zinc-500 dark:text-zinc-400">| Jun 2026 - Present</span>
                       </p>
                       <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
                         Digital Healthcare Solutions in VR, Performance Optimization, 3D Assets Optimization, OpenXR, Rendering & Graphics in Unity.
@@ -95,7 +95,7 @@ export default function Home() {
                   <div className="mt-3 flex flex-col gap-4">
                     <div>
                       <p className="text-lg sm:text-xl font-semibold text-zinc-800 dark:text-zinc-200">
-                        Software Developer <span className="font-light text-base text-zinc-500 dark:text-zinc-400">| Jan 2026 - June 2026</span>
+                        Software Developer <span className="font-light text-base text-zinc-500 dark:text-zinc-400">| Jan 2026 - Jun 2026</span>
                       </p>
                       <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
                         Backend Infrastructure, CI/CD, Cloudflare Tunneling, Supabase, JWT & RBAC Implementation.
@@ -118,7 +118,7 @@ export default function Home() {
                   <div className="mt-3 flex flex-col gap-4">
                     <div>
                       <p className="text-lg sm:text-xl font-semibold text-zinc-800 dark:text-zinc-200">
-                        Jr. Unity Developer <span className="font-light text-base text-zinc-500 dark:text-zinc-400">| June 2024 - Dec 2025</span>
+                        Jr. Unity Developer <span className="font-light text-base text-zinc-500 dark:text-zinc-400">| Jun 2024 - Dec 2025</span>
                       </p>
                       <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
                         Aviation Simulations, Performance Conscious System Design, Custom RESTful Layer Engineering, UI/UX & Interaction Design.
@@ -195,7 +195,7 @@ export default function Home() {
                     Core Programming Languages
                   </h3>
                   <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                    C#, Python, JavaScript, Java, SQL
+                    C#, Python, JavaScript, SQL
                   </p>
                 </div>
 
