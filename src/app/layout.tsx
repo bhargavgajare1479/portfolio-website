@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { crimsonPro, outfit } from "@/fonts";
+import { ibmPlexSerif } from "@/fonts";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Header } from "@/components/Header";
@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${crimsonPro.variable} ${outfit.variable} h-full antialiased`}
+      className={`${ibmPlexSerif.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
