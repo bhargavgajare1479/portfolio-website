@@ -3,7 +3,7 @@ export interface ExperienceItem {
   company: string;
   role: string;
   period: string;
-  type: "Internship" | "Full Time";
+  type: "Internship" | "Full Time" | "Hybrid" | "Part Time";
   overview: string;
   achievements: string[];
 }
@@ -32,7 +32,7 @@ export const experienceItems: ExperienceItem[] = [
     company: "Sorxn LLP",
     role: "Software Developer",
     period: "Jan 2026 - Jun 2026",
-    type: "Full Time",
+    type: "Hybrid",
     overview:
       "At Sorxn LLP, I architected and prototyped a backend infrastructure from the ground up, designing scalable RESTful API systems and automated deployment workflows. Seeking greater sovereignty and performance, I constructed a self-hosted communication server infrastructure on hardened Linux systems backed by Cloudflare tunneling and routing. This transition successfully eliminated dependency on third-party managed platforms while ensuring secure remote management. Building on this core infrastructure, I designed a full-stack internal administration dashboard secured with end-to-end JSON Web Token (JWT) authentication and granular role-based access control (RBAC), empowering internal teams with efficient, reliable, and secure operational tooling.",
     achievements: [
@@ -61,7 +61,7 @@ export const experienceItems: ExperienceItem[] = [
     company: "Vighnesh Inc.",
     role: "Unity Developer",
     period: "Jun 2024 - Dec 2025",
-    type: "Full Time",
+    type: "Hybrid",
     overview:
       "As a Unity Developer at Vighnesh Inc., I engineered core systems and custom architectural abstractions for large-scale enterprise XR and WebGL simulation platforms. To overcome cross-platform compatibility barriers, I replaced restrictive third-party SDKs with custom-built Firebase REST API clients and flexible UnityWebRequest networking layers. I architected a deterministic UI state machine managing over 500 runtime screens across 20+ aerospace simulation modules. Furthermore, I engineered an additive scene lifecycle controller with intelligent instance recycling, slashing peak memory consumption and load latency by over 50% while ensuring stable, memory-efficient C# execution across diverse standalone VR and web environments.",
     achievements: [
