@@ -45,7 +45,7 @@ export function Header() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3 border-l border-zinc-200 dark:border-zinc-800 pl-6 ml-2">
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume" className="p-2 text-zinc-500 hover:text-black dark:hover:text-white transition-colors">
+            <a href="https://docs.google.com/document/d/14S3Kd3epOc1SCc7CW21R7p-ICucSNiFH/edit?usp=sharing&ouid=114721097828717507781&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" aria-label="Resume" className="p-2 text-zinc-500 hover:text-black dark:hover:text-white transition-colors">
               <FaFileAlt size={18} />
             </a>
             <a href="https://github.com/bhargavgajare1479" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="p-2 text-zinc-500 hover:text-black dark:hover:text-white transition-colors">
