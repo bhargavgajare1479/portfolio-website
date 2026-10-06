@@ -10,6 +10,8 @@ interface ContactContentProps {
 
 export function ContactContent(_props: ContactContentProps = {}) {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [honeypot, setHoneypot] = useState("");
+  const [renderedAt] = useState(() => Date.now());
   const [errors, setErrors] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [statusMessage, setStatusMessage] = useState("");
@@ -51,7 +53,11 @@ export function ContactContent(_props: ContactContentProps = {}) {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          ...form,
+          website: honeypot,
+          renderedAt,
+        }),
       });
 
       if (res.ok) {
@@ -144,6 +150,22 @@ export function ContactContent(_props: ContactContentProps = {}) {
           noValidate
           className="p-6 sm:p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/40 space-y-6"
         >
+          {/* Honeypot field for bot spam trap (invisible to human visitors) */}
+          <div
+            className="opacity-0 absolute -left-[9999px] h-0 w-0 overflow-hidden pointer-events-none"
+            aria-hidden="true"
+          >
+            <label htmlFor="website">Website</label>
+            <input
+              id="website"
+              name="website"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+            />
+          </div>
           <div>
             <label
               htmlFor="name"
