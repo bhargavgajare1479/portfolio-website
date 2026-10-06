@@ -4,7 +4,7 @@ interface EducationContentProps {
   isModal?: boolean;
 }
 
-export function EducationContent({ isModal = false }: EducationContentProps) {
+export function EducationContent(_props: EducationContentProps = {}) {
   return (
     <div className="space-y-12">
       {education.map((item) => (

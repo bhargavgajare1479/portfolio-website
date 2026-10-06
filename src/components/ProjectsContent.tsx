@@ -5,7 +5,7 @@ interface ProjectsContentProps {
   isModal?: boolean;
 }
 
-export function ProjectsContent({ isModal = false }: ProjectsContentProps) {
+export function ProjectsContent(_props: ProjectsContentProps = {}) {
   return (
     <div className="space-y-12">
       {projects.map((project) => (

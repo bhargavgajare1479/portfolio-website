@@ -54,10 +54,11 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ ok: true });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Contact Form Email Error:", error);
 
-    if (error?.code === "EAUTH" || error?.responseCode === 535) {
+    const err = error as { code?: string; responseCode?: number } | null | undefined;
+    if (err?.code === "EAUTH" || err?.responseCode === 535) {
       return NextResponse.json(
         {
           error:

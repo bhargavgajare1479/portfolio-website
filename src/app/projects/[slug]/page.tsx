@@ -1,6 +1,13 @@
 import { notFound } from "next/navigation";
-import { getProjectBySlug } from "@/lib/projects";
+import Link from "next/link";
+import { getProjectBySlug, projects } from "@/lib/projects";
 import { FaGithub, FaVideo, FaExternalLinkAlt, FaFilePdf } from "react-icons/fa";
+
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
+}
 
 // In Next.js 15+ App Router, params is a Promise
 export default async function ProjectPage({
@@ -93,9 +100,9 @@ export default async function ProjectPage({
         </ul>
       </div>
 
-      <a href="/" className="mt-8 text-base sm:text-lg text-zinc-500 hover:text-black dark:hover:text-white transition-colors">
+      <Link href="/" className="mt-8 text-base sm:text-lg text-zinc-500 hover:text-black dark:hover:text-white transition-colors">
         ← Back to Home
-      </a>
+      </Link>
     </main>
   );
 }

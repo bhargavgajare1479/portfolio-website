@@ -8,7 +8,7 @@ interface ContactContentProps {
   isModal?: boolean;
 }
 
-export function ContactContent({ isModal = false }: ContactContentProps) {
+export function ContactContent(_props: ContactContentProps = {}) {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [errors, setErrors] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");

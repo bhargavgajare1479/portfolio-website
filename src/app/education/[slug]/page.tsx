@@ -1,5 +1,12 @@
 import { notFound } from "next/navigation";
-import { getEducationBySlug } from "@/lib/education";
+import Link from "next/link";
+import { getEducationBySlug, education } from "@/lib/education";
+
+export async function generateStaticParams() {
+  return education.map((item) => ({
+    slug: item.slug,
+  }));
+}
 
 // In Next.js 15+ App Router, params is a Promise
 export default async function EducationDetailPage({
@@ -40,9 +47,9 @@ export default async function EducationDetailPage({
         </ul>
       </div>
 
-      <a href="/" className="mt-8 text-base sm:text-lg text-zinc-500 hover:text-black dark:hover:text-white transition-colors">
+      <Link href="/" className="mt-8 text-base sm:text-lg text-zinc-500 hover:text-black dark:hover:text-white transition-colors">
         ← Back to Home
-      </a>
+      </Link>
     </main>
   );
 }

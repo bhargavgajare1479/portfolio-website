@@ -6,7 +6,7 @@ import Image from "next/image";
 import { experienceItems, ExperienceItem } from "@/lib/experience";
 import { sessionItems, SessionItem } from "@/lib/experience-sessions";
 
-export function ExperienceContent({ isModal: _isModal = false }: { isModal?: boolean }) {
+export function ExperienceContent(_props: { isModal?: boolean } = {}) {
   const [activeTab, setActiveTab] = useState<"work" | "sessions">("work");
 
   return (
