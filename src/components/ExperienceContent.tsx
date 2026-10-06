@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { experienceItems, ExperienceItem } from "@/lib/experience";
 import { sessionItems, SessionItem } from "@/lib/experience-sessions";
 
-export function ExperienceContent({ isModal = false }: { isModal?: boolean }) {
+export function ExperienceContent({ isModal: _isModal = false }: { isModal?: boolean }) {
   const [activeTab, setActiveTab] = useState<"work" | "sessions">("work");
 
   return (
@@ -113,11 +114,13 @@ export function ExperienceContent({ isModal = false }: { isModal?: boolean }) {
               {item.images.length > 0 && (
                 <div className="mt-6 flex flex-col gap-2">
                   {/* Hero Image */}
-                  <div className="w-full overflow-hidden rounded-xl">
-                    <img
+                  <div className="relative w-full aspect-[16/10] overflow-hidden rounded-xl">
+                    <Image
                       src={item.images[0]}
                       alt={`${item.title} — photo 1`}
-                      className="w-full object-cover rounded-xl aspect-[16/10]"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 900px"
+                      className="object-cover rounded-xl"
                     />
                   </div>
 
@@ -125,11 +128,13 @@ export function ExperienceContent({ isModal = false }: { isModal?: boolean }) {
                   {item.images.length > 1 && (
                     <div className="grid grid-cols-2 gap-2">
                       {item.images.slice(1, 3).map((img, i) => (
-                        <div key={i} className="overflow-hidden rounded-xl">
-                          <img
+                        <div key={i} className="relative w-full aspect-[5/4] overflow-hidden rounded-xl">
+                          <Image
                             src={img}
                             alt={`${item.title} — photo ${i + 2}`}
-                            className="w-full object-cover rounded-xl aspect-[5/4]"
+                            fill
+                            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 35vw, 450px"
+                            className="object-cover rounded-xl"
                           />
                         </div>
                       ))}

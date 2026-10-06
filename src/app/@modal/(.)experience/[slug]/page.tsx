@@ -2,6 +2,7 @@ import { getExperienceBySlug } from "@/lib/experience";
 import { getSessionBySlug } from "@/lib/experience-sessions";
 import { Modal } from "@/components/Modal";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 
 export default async function ExperienceDetailModal({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -71,21 +72,25 @@ export default async function ExperienceDetailModal({ params }: { params: Promis
         {/* Image Grid: 1 large hero + 2 side-by-side */}
         {session?.images && session.images.length > 0 && (
           <div className="flex flex-col gap-2">
-            <div className="w-full overflow-hidden rounded-xl">
-              <img
+            <div className="relative w-full aspect-[16/10] overflow-hidden rounded-xl">
+              <Image
                 src={session.images[0]}
                 alt={`${session.title} — photo 1`}
-                className="w-full object-cover rounded-xl aspect-[16/10]"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 900px"
+                className="object-cover rounded-xl"
               />
             </div>
             {session.images.length > 1 && (
               <div className="grid grid-cols-2 gap-2">
                 {session.images.slice(1, 3).map((img, i) => (
-                  <div key={i} className="overflow-hidden rounded-xl">
-                    <img
+                  <div key={i} className="relative w-full aspect-[5/4] overflow-hidden rounded-xl">
+                    <Image
                       src={img}
                       alt={`${session.title} — photo ${i + 2}`}
-                      className="w-full object-cover rounded-xl aspect-[5/4]"
+                      fill
+                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 35vw, 450px"
+                      className="object-cover rounded-xl"
                     />
                   </div>
                 ))}

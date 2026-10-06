@@ -2,6 +2,7 @@ import { getExperienceBySlug, experienceItems } from "@/lib/experience";
 import { getSessionBySlug, sessionItems } from "@/lib/experience-sessions";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 export async function generateStaticParams() {
   const expParams = experienceItems.map((item) => ({ slug: item.slug }));
@@ -102,11 +103,13 @@ export default async function ExperienceDetailPage({ params }: { params: Promise
       {session?.images && session.images.length > 0 && (
         <div className="mt-8 w-full flex flex-col gap-2">
           {/* Hero Image */}
-          <div className="w-full overflow-hidden rounded-xl">
-            <img
+          <div className="relative w-full aspect-[16/10] overflow-hidden rounded-xl">
+            <Image
               src={session.images[0]}
               alt={`${session.title} — photo 1`}
-              className="w-full object-cover rounded-xl aspect-[16/10]"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 900px"
+              className="object-cover rounded-xl"
             />
           </div>
 
@@ -114,11 +117,13 @@ export default async function ExperienceDetailPage({ params }: { params: Promise
           {session.images.length > 1 && (
             <div className="grid grid-cols-2 gap-2">
               {session.images.slice(1, 3).map((img, i) => (
-                <div key={i} className="overflow-hidden rounded-xl">
-                  <img
+                <div key={i} className="relative w-full aspect-[5/4] overflow-hidden rounded-xl">
+                  <Image
                     src={img}
                     alt={`${session.title} — photo ${i + 2}`}
-                    className="w-full object-cover rounded-xl aspect-[5/4]"
+                    fill
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 35vw, 450px"
+                    className="object-cover rounded-xl"
                   />
                 </div>
               ))}
