@@ -110,16 +110,16 @@ export function ExperienceContent({ isModal: _isModal = false }: { isModal?: boo
                 {item.date}
               </p>
 
-              {/* Image Grid: 1 large hero + 2 side-by-side */}
+              {/* Image Grid: 1 large hero + 2 side-by-side (50% scale, centered) */}
               {item.images.length > 0 && (
-                <div className="mt-6 flex flex-col gap-2">
+                <div className="mt-6 w-1/2 mx-auto flex flex-col gap-2">
                   {/* Hero Image */}
                   <div className="relative w-full aspect-[16/10] overflow-hidden rounded-xl">
                     <Image
                       src={item.images[0]}
                       alt={`${item.title} — photo 1`}
                       fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 900px"
+                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 40vw, 450px"
                       className="object-cover rounded-xl"
                     />
                   </div>
@@ -133,7 +133,7 @@ export function ExperienceContent({ isModal: _isModal = false }: { isModal?: boo
                             src={img}
                             alt={`${item.title} — photo ${i + 2}`}
                             fill
-                            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 35vw, 450px"
+                            sizes="(max-width: 768px) 25vw, (max-width: 1200px) 20vw, 225px"
                             className="object-cover rounded-xl"
                           />
                         </div>
