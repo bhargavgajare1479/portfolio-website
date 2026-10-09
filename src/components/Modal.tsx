@@ -3,7 +3,6 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
-import { isMobileOrTablet } from "@/lib/device";
 
 export function Modal({ children }: { children: React.ReactNode }) {
   const router = useRouter();
@@ -25,10 +24,6 @@ export function Modal({ children }: { children: React.ReactNode }) {
   }
 
   useEffect(() => {
-    if (isMobileOrTablet()) {
-      window.location.replace(window.location.pathname);
-      return;
-    }
     if (!dialogRef.current?.open) {
       dialogRef.current?.showModal();
     }
@@ -96,7 +91,7 @@ export function Modal({ children }: { children: React.ReactNode }) {
   return (
     <dialog
       ref={dialogRef}
-      className="backdrop:bg-black/80 bg-white dark:bg-zinc-900 text-black dark:text-white rounded-2xl fixed inset-0 m-auto w-[95vw] h-[95vh] max-w-none max-h-none p-0 shadow-2xl overflow-hidden border border-zinc-200/50 dark:border-zinc-800/50"
+      className="backdrop:bg-black/80 bg-white dark:bg-zinc-900 text-black dark:text-white rounded-none sm:rounded-2xl fixed inset-0 m-auto w-full h-full sm:w-[95vw] sm:h-[95vh] max-w-none max-h-none p-0 shadow-2xl overflow-hidden border-0 sm:border border-zinc-200/50 dark:border-zinc-800/50"
       onClose={onDismiss}
       onClick={onBackdropClick}
     >
@@ -119,8 +114,8 @@ export function Modal({ children }: { children: React.ReactNode }) {
               onClick={scrollUp}
               disabled={!canScrollUp}
               className={`flex items-center justify-center w-10 h-10 rounded-md transition-all text-sm font-semibold ${canScrollUp
-                ? "flex items-center justify-center w-10 h-10 text-zinc-500 hover:text-black dark:hover:text-white bg-zinc-100 dark:bg-zinc-800/80 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors shadow-sm cursor-pointer"
-                : "flex items-center justify-center w-10 h-10 text-zinc-500 hover:text-black dark:hover:text-white bg-zinc-100 dark:bg-zinc-800/80 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors shadow-sm cursor-pointer"
+                ? "text-zinc-500 hover:text-black dark:hover:text-white bg-zinc-100 dark:bg-zinc-800/80 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors shadow-sm cursor-pointer"
+                : "text-zinc-500 hover:text-black dark:hover:text-white bg-zinc-100 dark:bg-zinc-800/80 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors shadow-sm cursor-pointer"
                 }`}
               aria-label="Scroll up"
             >
@@ -130,8 +125,8 @@ export function Modal({ children }: { children: React.ReactNode }) {
               onClick={scrollDown}
               disabled={!canScrollDown}
               className={`flex items-center justify-center w-10 h-10 rounded-md transition-all text-sm font-semibold ${canScrollDown
-                ? "flex items-center justify-center w-10 h-10 text-zinc-500 hover:text-black dark:hover:text-white bg-zinc-100 dark:bg-zinc-800/80 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors shadow-sm cursor-pointer"
-                : "flex items-center justify-center w-10 h-10 text-zinc-500 hover:text-black dark:hover:text-white bg-zinc-100 dark:bg-zinc-800/80 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors shadow-sm cursor-pointer"
+                ? "text-zinc-500 hover:text-black dark:hover:text-white bg-zinc-100 dark:bg-zinc-800/80 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors shadow-sm cursor-pointer"
+                : "text-zinc-500 hover:text-black dark:hover:text-white bg-zinc-100 dark:bg-zinc-800/80 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors shadow-sm cursor-pointer"
                 }`}
               aria-label="Scroll down"
             >
@@ -144,7 +139,7 @@ export function Modal({ children }: { children: React.ReactNode }) {
         <div
           ref={scrollContainerRef}
           onScroll={checkScroll}
-          className="w-full h-full overflow-y-auto p-8 sm:p-12 pr-16 sm:pr-20"
+          className="w-full h-full overflow-y-auto p-6 sm:p-12 pr-14 sm:pr-20"
         >
           {children}
         </div>
