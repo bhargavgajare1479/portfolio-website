@@ -27,7 +27,7 @@ export default function RootLayout({
       className={`${ibmPlexSerif.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">
+      <body className={`${ibmPlexSerif.className} min-h-full flex flex-col font-serif`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <SmoothScroll>
             <Header />
