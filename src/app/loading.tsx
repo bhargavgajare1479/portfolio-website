@@ -47,6 +47,20 @@ export default function Loading() {
             <Skeleton className="h-5 w-full" />
           </div>
         </div>
+
+        {/* Blogs block skeleton */}
+        <div className="order-6 lg:order-6 lg:col-span-6 min-h-[250px] lg:min-h-[300px] rounded-2xl lg:rounded-3xl border border-zinc-200/50 dark:border-zinc-800/50 p-8 lg:p-10 flex flex-col justify-center gap-4">
+          <Skeleton className="h-8 w-28" />
+          <Skeleton className="h-10 w-64" />
+          <Skeleton className="h-6 w-full max-w-md mt-4" />
+        </div>
+
+        {/* Contact block skeleton */}
+        <div className="order-7 lg:order-7 lg:col-span-6 min-h-[250px] lg:min-h-[300px] rounded-2xl lg:rounded-3xl border border-zinc-200/50 dark:border-zinc-800/50 p-8 lg:p-10 flex flex-col justify-center gap-4">
+          <Skeleton className="h-8 w-20" />
+          <Skeleton className="h-10 w-56" />
+          <Skeleton className="h-6 w-full max-w-md mt-4" />
+        </div>
       </div>
     </main>
   );
