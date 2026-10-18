@@ -1,10 +1,6 @@
 import { education } from "@/lib/education";
 
-interface EducationContentProps {
-  isModal?: boolean;
-}
-
-export function EducationContent(_props: EducationContentProps = {}) {
+export function EducationContent() {
   return (
     <div className="space-y-12">
       {education.map((item) => (

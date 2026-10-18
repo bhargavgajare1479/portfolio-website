@@ -4,11 +4,7 @@ import React, { useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail, MdSend } from "react-icons/md";
 
-interface ContactContentProps {
-  isModal?: boolean;
-}
-
-export function ContactContent(_props: ContactContentProps = {}) {
+export function ContactContent() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [honeypot, setHoneypot] = useState("");
   const [renderedAt] = useState(() => Date.now());

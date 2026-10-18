@@ -1,11 +1,7 @@
 import { projects } from "@/lib/projects";
 import { FaGithub, FaVideo, FaExternalLinkAlt, FaFilePdf } from "react-icons/fa";
 
-interface ProjectsContentProps {
-  isModal?: boolean;
-}
-
-export function ProjectsContent(_props: ProjectsContentProps = {}) {
+export function ProjectsContent() {
   return (
     <div className="space-y-12">
       {projects.map((project) => (

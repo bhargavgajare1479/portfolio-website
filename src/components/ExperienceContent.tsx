@@ -1,12 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { experienceItems, ExperienceItem } from "@/lib/experience";
 import { sessionItems, SessionItem } from "@/lib/experience-sessions";
 
-export function ExperienceContent(_props: { isModal?: boolean } = {}) {
+export function ExperienceContent() {
   const [activeTab, setActiveTab] = useState<"work" | "sessions">("work");
 
   return (
@@ -47,12 +46,9 @@ export function ExperienceContent(_props: { isModal?: boolean } = {}) {
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
                 <div>
-                  <Link
-                    href={`/experience/${item.slug}`}
-                    className="font-heading text-3xl font-bold text-zinc-900 dark:text-zinc-100 hover:opacity-80 transition-opacity"
-                  >
+                  <h3 className="font-heading text-3xl font-bold text-zinc-900 dark:text-zinc-100">
                     {item.company}
-                  </Link>
+                  </h3>
                   <p className="text-xl font-semibold text-zinc-800 dark:text-zinc-200 mt-1">
                     {item.role}
                   </p>
