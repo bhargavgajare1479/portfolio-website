@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ContactContent } from "@/components/ContactContent";
+
+export const metadata: Metadata = {
+  title: "Get In Touch",
+  description:
+    "Contact Bhargav Gajare for spatial systems architecture, runtime engineering, and technical collaborations.",
+};
 
 export default function ContactPage() {
   return (

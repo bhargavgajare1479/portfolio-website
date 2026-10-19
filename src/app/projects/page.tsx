@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { ProjectsContent } from "@/components/ProjectsContent";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Detailed engineering architecture, challenges, and solutions across spatial computing and systems projects.",
+};
 
 export default function ProjectsPage() {
   return (

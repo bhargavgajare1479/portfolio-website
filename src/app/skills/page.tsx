@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { SkillsContent } from "@/components/SkillsContent";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Skills & Expertise",
+  description:
+    "Core programming languages, XR, spatial computing, full stack development, and systems engineering concepts.",
+};
 
 export default function SkillsPage() {
   return (
@@ -10,7 +17,7 @@ export default function SkillsPage() {
 
       <h1 className="font-heading text-5xl font-bold mb-4">Skills & Expertise</h1>
       <p className="text-xl text-zinc-600 dark:text-zinc-400 mb-16 max-w-2xl leading-relaxed">
-        An overview of core languages, spatial computing frameworks, backend systems, DevOps tools, and architectural concepts.
+        An overview of core languages, spatial computing frameworks, full stack systems, DevOps tools, and architectural concepts.
       </p>
 
       <SkillsContent />

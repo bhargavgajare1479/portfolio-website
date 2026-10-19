@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ExperienceContent } from "@/components/ExperienceContent";
+
+export const metadata: Metadata = {
+  title: "Experience & Leadership",
+  description:
+    "Engineering work history, technical seminars, XR workshops, and leadership roles by Bhargav Gajare.",
+};
 
 export default function ExperiencePage() {
   return (

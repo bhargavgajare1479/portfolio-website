@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { EducationContent } from "@/components/EducationContent";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Education",
+  description:
+    "Academic background, degrees, coursework, and scholastic honors by Bhargav Gajare.",
+};
 
 export default function EducationPage() {
   return (

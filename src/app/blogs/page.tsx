@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Blogs & Insights",
+  description:
+    "Technical articles and deep dives on systems engineering, XR optimization, and runtime performance.",
+};
 
 export default function BlogsPage() {
   return (
