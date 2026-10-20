@@ -10,11 +10,11 @@ export const skillCategories: SkillCategory[] = [
     slug: "core-programming-languages",
     title: "Core Programming Languages",
     description: "Primary general-purpose and programming languages that I have worked with across multiple domains.",
-    skills: ["C#", "Python", "JavaScript", "SQL"],
+    skills: ["C#", "Python", "JavaScript", "TypeScript", "SQL"],
   },
   {
-    slug: "xr-stack",
-    title: "XR Stack",
+    slug: "xr",
+    title: "XR",
     description: "Immersive spatial computing, augmented reality, and virtual reality frameworks and engines.",
     skills: [
       "Unity",
@@ -27,16 +27,16 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    slug: "backend-stack",
-    title: "Backend Stack",
-    description: "High-performance server frameworks, cloud databases, and API development infrastructure.",
-    skills: ["FastAPI", "Firebase", "Supabase", "Express.js"],
+    slug: "full-stack",
+    title: "Full Stack",
+    description: "High-performance webapps, server frameworks, cloud databases, and API development infrastructure.",
+    skills: ["Next.js", "React", "FastAPI", "Firebase", "Supabase",],
   },
   {
     slug: "tools-and-other-technologies",
     title: "Tools and other technologies",
     description: "DevOps, deployment platforms, version control, and containerization tooling.",
-    skills: ["Linux", "Cloudflare", "Git and GitHub", "Docker"],
+    skills: ["Linux", "Cloudflare", "Git and GitHub", "Docker", "Postman"],
   },
   {
     slug: "concepts",

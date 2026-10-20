@@ -6,9 +6,44 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://bhargavgajare.com";
+
 export const metadata: Metadata = {
-  title: "Bhargav Gajare",
-  description: "XR, Unity, runtime and systems engineer",
+  metadataBase: new URL(baseUrl),
+  title: {
+    default: "Bhargav Gajare | XR, Runtime & Systems Engineer",
+    template: "%s | Bhargav Gajare",
+  },
+  description:
+    "Portfolio of Bhargav Gajare — XR, Unity, runtime and systems engineer specializing in low-level performance, spatial computing architectures, and standalone VR optimization.",
+  keywords: [
+    "Bhargav Gajare",
+    "XR Engineer",
+    "Unity Developer",
+    "Systems Engineer",
+    "Spatial Computing",
+    "Virtual Reality",
+    "C#",
+    "Low-Level Systems",
+    "Graphics Optimization",
+  ],
+  authors: [{ name: "Bhargav Gajare" }],
+  creator: "Bhargav Gajare",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: baseUrl,
+    siteName: "Bhargav Gajare",
+    title: "Bhargav Gajare | XR, Runtime & Systems Engineer",
+    description:
+      "Explore projects, architecture case studies, and engineering achievements across spatial computing and systems programming.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bhargav Gajare | XR, Runtime & Systems Engineer",
+    description:
+      "Explore projects, architecture case studies, and engineering achievements across spatial computing and systems programming.",
+  },
   icons: {
     icon: "/favicon.svg",
   },
@@ -16,10 +51,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  modal,
 }: Readonly<{
   children: React.ReactNode;
-  modal: React.ReactNode;
 }>) {
   return (
     <html
@@ -27,14 +60,13 @@ export default function RootLayout({
       className={`${ibmPlexSerif.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">
+      <body className={`${ibmPlexSerif.className} min-h-full flex flex-col font-serif`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <SmoothScroll>
             <Header />
             <div className="flex-1 flex flex-col">
               {children}
             </div>
-            {modal}
             <Footer />
           </SmoothScroll>
         </ThemeProvider>

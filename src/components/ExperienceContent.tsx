@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Image from "next/image";
 import { experienceItems, ExperienceItem } from "@/lib/experience";
 import { sessionItems, SessionItem } from "@/lib/experience-sessions";
 
-export function ExperienceContent({ isModal = false }: { isModal?: boolean }) {
+export function ExperienceContent() {
   const [activeTab, setActiveTab] = useState<"work" | "sessions">("work");
 
   return (
@@ -46,39 +46,36 @@ export function ExperienceContent({ isModal = false }: { isModal?: boolean }) {
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
                 <div>
-                  <Link
-                    href={`/experience/${item.slug}`}
-                    className="font-heading text-3xl font-bold text-zinc-900 dark:text-zinc-100 hover:opacity-80 transition-opacity"
-                  >
+                  <h2 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
                     {item.company}
-                  </Link>
-                  <p className="text-xl font-semibold text-zinc-800 dark:text-zinc-200 mt-1">
+                  </h2>
+                  <p className="text-lg sm:text-xl font-semibold text-zinc-800 dark:text-zinc-200 mt-1">
                     {item.role}
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="px-3.5 py-1 text-sm font-semibold rounded-full bg-zinc-200 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200">
+                  <span className="px-3.5 py-1 text-xs sm:text-sm font-semibold rounded-full bg-zinc-200 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200">
                     {item.type}
                   </span>
-                  <span className="text-base font-medium text-zinc-500 dark:text-zinc-400">
+                  <span className="text-sm sm:text-base font-normal text-zinc-600 dark:text-zinc-400">
                     {item.period}
                   </span>
                 </div>
               </div>
 
-              <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed">
+              <p className="mt-4 text-base sm:text-lg font-normal text-zinc-700 dark:text-zinc-400 leading-relaxed">
                 {item.overview}
               </p>
 
               <div className="mt-6">
-                <h4 className="font-heading text-lg font-semibold mb-3 text-zinc-900 dark:text-zinc-100">
+                <h3 className="font-heading text-base sm:text-lg font-bold mb-3 text-zinc-900 dark:text-zinc-100 tracking-tight">
                   Key Achievements & Responsibilities
-                </h4>
+                </h3>
                 <ul className="list-disc pl-6 space-y-2">
                   {item.achievements.map((achievement, i) => (
                     <li
                       key={i}
-                      className="text-base text-zinc-700 dark:text-zinc-300 leading-relaxed"
+                      className="text-sm sm:text-base font-normal text-zinc-700 dark:text-zinc-400 leading-relaxed"
                     >
                       {achievement}
                     </li>
@@ -99,25 +96,27 @@ export function ExperienceContent({ isModal = false }: { isModal?: boolean }) {
               className="first:pt-0"
             >
               {/* Title: [TYPE] Title */}
-              <h3 className="font-heading text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100">
-                <span className="text-zinc-500 dark:text-zinc-400">[{item.type}]</span>{" "}
+              <h2 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+                <span className="text-zinc-600 dark:text-zinc-400 font-semibold">[{item.type}]</span>{" "}
                 {item.title}
-              </h3>
+              </h2>
 
               {/* Date */}
-              <p className="mt-2 text-lg text-zinc-500 dark:text-zinc-400 font-medium">
+              <p className="mt-1.5 text-sm sm:text-base text-zinc-600 dark:text-zinc-400 font-normal">
                 {item.date}
               </p>
 
-              {/* Image Grid: 1 large hero + 2 side-by-side */}
+              {/* Image Grid: 1 large hero + 2 side-by-side (50% scale, centered) */}
               {item.images.length > 0 && (
-                <div className="mt-6 flex flex-col gap-2">
+                <div className="mt-6 w-1/2 mx-auto flex flex-col gap-2">
                   {/* Hero Image */}
-                  <div className="w-full overflow-hidden rounded-xl">
-                    <img
+                  <div className="relative w-full aspect-[16/10] overflow-hidden rounded-xl">
+                    <Image
                       src={item.images[0]}
                       alt={`${item.title} — photo 1`}
-                      className="w-full object-cover rounded-xl aspect-[16/10]"
+                      fill
+                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 40vw, 450px"
+                      className="object-cover rounded-xl"
                     />
                   </div>
 
@@ -125,11 +124,13 @@ export function ExperienceContent({ isModal = false }: { isModal?: boolean }) {
                   {item.images.length > 1 && (
                     <div className="grid grid-cols-2 gap-2">
                       {item.images.slice(1, 3).map((img, i) => (
-                        <div key={i} className="overflow-hidden rounded-xl">
-                          <img
+                        <div key={i} className="relative w-full aspect-[5/4] overflow-hidden rounded-xl">
+                          <Image
                             src={img}
                             alt={`${item.title} — photo ${i + 2}`}
-                            className="w-full object-cover rounded-xl aspect-[5/4]"
+                            fill
+                            sizes="(max-width: 768px) 25vw, (max-width: 1200px) 20vw, 225px"
+                            className="object-cover rounded-xl"
                           />
                         </div>
                       ))}
@@ -139,7 +140,7 @@ export function ExperienceContent({ isModal = false }: { isModal?: boolean }) {
               )}
 
               {/* Description */}
-              <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed italic">
+              <p className="mt-6 text-base sm:text-lg font-normal text-zinc-700 dark:text-zinc-400 leading-relaxed italic">
                 {item.description}
               </p>
 
@@ -149,7 +150,7 @@ export function ExperienceContent({ isModal = false }: { isModal?: boolean }) {
                   href={item.linkedinPostLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-4 text-base font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+                  className="inline-flex items-center gap-2 mt-4 text-sm sm:text-base font-normal text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
                 >
                   View on LinkedIn →
                 </a>
