@@ -2,6 +2,7 @@ export interface ExperienceItem {
   slug: string;
   company: string;
   role: string;
+  shortDescription: string;
   period: string;
   type: "Internship" | "Full Time" | "Hybrid" | "Part Time";
   overview: string;
@@ -13,10 +14,11 @@ export const experienceItems: ExperienceItem[] = [
     slug: "iiti-drishti-cps-foundation-project-intern",
     company: "IITI Drishti CPS Foundation, IIT Indore",
     role: "Project Intern (AR/VR)",
-    period: "Jun 2026 - Present",
+    shortDescription: "Digital Healthcare Solutions in XR, Performance Optimization, 3D Assets Optimization, OpenXR, Rendering and Graphics in Unity...",
+    period: "Jun 2026 - Sep 2026",
     type: "Internship",
     overview:
-      "At IITI Drishti CPS Foundation at IIT Indore, I spearhead the architectural design and optimization of performance-critical AR/VR simulation systems. Facing rigorous hardware limits, I systematically analyzed client deliverables to engineer tailored rendering pipelines and spatial computing solutions. By combining aggressive 3D model topology refinement, texture compression, static batching, and comprehensive occlusion and frustum culling, I achieved over 40% faster runtime performance and cut draw calls and batch counts by more than half. Additionally, I built highly responsive interactive spatial controls—including open-standard OpenXR hand grab mechanics and fluid locomotion—while maintaining strict frame budgets via continuous hardware profiling.",
+      "At IITI Drishti CPS Foundation, IIT Indore, I initiated the architectural design and optimization of performance-critical AR/VR simulation systems. Facing rigorous hardware limits, I systematically analyzed client deliverables to engineer tailored rendering pipelines and spatial computing solutions. By combining aggressive 3D model topology refinement, texture compression, static batching, and comprehensive occlusion and frustum culling, I achieved over 40% faster runtime performance and cut draw calls and batch counts by more than half. Additionally, I built highly responsive interactive spatial controls—including open-standard OpenXR hand grab mechanics and fluid locomotion—while maintaining strict frame budgets via continuous hardware profiling.",
     achievements: [
       "Analyzed and planned system architecture based on client deliverables to develop performance-conscious simulation systems.",
       "Reduced draw calls by optimizing 3D model topology and implementing aggressive texture compression.",
@@ -31,6 +33,7 @@ export const experienceItems: ExperienceItem[] = [
     slug: "sorxn-llp-software-developer",
     company: "Sorxn LLP",
     role: "Software Developer",
+    shortDescription: "Backend Infrastructure, CI/CD, Cloudflare Tunneling, Next.js, Supabase, JWT and RBAC implementation...",
     period: "Jan 2026 - Jun 2026",
     type: "Hybrid",
     overview:
@@ -47,6 +50,7 @@ export const experienceItems: ExperienceItem[] = [
     slug: "sorxn-llp-software-developer-intern",
     company: "Sorxn LLP",
     role: "Software Developer Intern",
+    shortDescription: "Full Stack Web Development and Responsive UI Implementation...",
     period: "Dec 2025 - Jan 2026",
     type: "Internship",
     overview:
@@ -60,6 +64,7 @@ export const experienceItems: ExperienceItem[] = [
     slug: "vighnesh-inc-unity-developer",
     company: "Vighnesh Inc.",
     role: "Unity Developer",
+    shortDescription: "Aviation Simulation, Performance Conscious System Design, Custom RESTful Layer Engineering, UI/UX and Interaction Design...",
     period: "Jun 2024 - Dec 2025",
     type: "Hybrid",
     overview:
@@ -72,19 +77,23 @@ export const experienceItems: ExperienceItem[] = [
       "Cut peak memory usage, application latency, and overhead by over 50% using custom scene management workflows.",
       "Developed core application systems in C# with structured update loops and memory-conscious allocation patterns.",
       "Resolved platform-specific runtime constraints for multi-platform targeting by coordinating architecture decisions with deployment-stage testing outcomes.",
+      "Developed an end-to-end aviation component simulator from the ground up, integrating 20+ interconnected cabin-system controls and workflows.",
+      "Built a full-stack application using React, Firebase Authentication, and Firestore for interactive system controls, user identity, and persistent profiles.",
+      "Engineered instructor-driven fault injection and hardware interfaces to simulate aircraft-system failures, abnormal conditions, and audio events.",
     ],
   },
   {
     slug: "vighnesh-inc-software-developer-intern",
     company: "Vighnesh Inc.",
     role: "Software Developer Intern",
+    shortDescription: "Performance Optimization, Hardware Feasibility Analysis, GPU Computing and Profiling...",
     period: "May 2023 - Jan 2024",
     type: "Internship",
     overview:
-      "During my initial internship at Vighnesh Inc., I contributed across full-stack backend integrations and immersive spatial computing projects. I built backend-synchronized simulation modules in PHP that connected real-time virtual simulation states with server-side processing pipelines. A major milestone involved porting complex Pre-Flight Check aviation training simulations from tethered PC VR systems (HTC Vive) to standalone Meta Quest Pro hardware. Through rigorous GPU profiling, aggressive texture compression, and occlusion culling, I resolved severe rendering bottlenecks to maintain smooth frame rates on mobile VR hardware, while conducting foundational hardware trade-off assessments that guided future engineering roadmaps.",
+      "During my initial internship at Vighnesh Inc., I contributed across full-stack and backend integrations and immersive spatial computing projects. I built backend-synchronized simulation modules in PHP that connected real-time virtual simulation states with server-side processing pipelines. A major milestone involved porting complex Pre-Flight Check aviation training simulations from tethered PC VR systems (HTC Vive) to standalone Meta Quest Pro hardware. Through rigorous GPU profiling, aggressive texture compression, and occlusion culling, I resolved severe rendering bottlenecks to maintain smooth frame rates on mobile VR hardware, while conducting foundational hardware trade-off assessments that guided future engineering roadmaps.",
     achievements: [
-      "Built backend-integrated simulation modules in PHP, implementing server-side request handling tied to real-time simulation state.",
-      "Ported a Pre-Flight Check simulation from PC VR (HTC Vive) to standalone VR (Meta Quest Pro) using the Meta XR SDK.",
+      "Built backend-integrated simulation modules, implementing server-side request handling tied to real-time simulation state.",
+      "Ported Pre-Flight Check aviation training simulation from PC VR (HTC Vive) to standalone VR (Meta Quest Pro) using the Meta XR SDK.",
       "Profiled and resolved critical rendering bottlenecks through occlusion culling, texture compression, and GPU profiling.",
       "Sustained stable frame rates under strict hardware targets, directly unblocking deployment on low-spec hardware.",
       "Conducted hardware feasibility analysis across heterogeneous platforms, producing architecture trade-off assessments that shaped production decisions.",

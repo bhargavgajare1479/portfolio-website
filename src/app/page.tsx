@@ -1,8 +1,33 @@
 import { BentoCard } from "@/components/BentoCard";
 import { FaLink } from "react-icons/fa";
 import { TileLink } from "@/components/TileLink";
+import { education } from "@/lib/education";
+import { experienceItems, ExperienceItem } from "@/lib/experience";
+import { projects } from "@/lib/projects";
+import { skillCategories } from "@/lib/skills";
 
 export default function Home() {
+  // Group consecutive roles under the same company for the Bento card timeline
+  const groupedExperience = experienceItems.reduce((acc, item) => {
+    const lastGroup = acc[acc.length - 1];
+    if (lastGroup && lastGroup.company === item.company) {
+      lastGroup.roles.push(item);
+    } else {
+      acc.push({
+        company: item.company,
+        roles: [item],
+      });
+    }
+    return acc;
+  }, [] as { company: string; roles: ExperienceItem[] }[]);
+
+  // Filter skill categories for the homepage Bento card preview
+  const homeSkillCategories = skillCategories.filter(
+    (category) =>
+      category.slug !== "tools-and-other-technologies" &&
+      category.slug !== "concepts"
+  );
+
   return (
     <main className="flex-1 w-full max-w-[1600px] mx-auto px-4 lg:px-8 xl:px-16 py-6 lg:py-12 flex flex-col">
       {/* 
@@ -41,21 +66,23 @@ export default function Home() {
                 <div className="relative ml-2 space-y-8">
                   <span className="absolute left-0 top-2 bottom-1 w-[1px] bg-zinc-200 dark:bg-zinc-800" />
 
-                  <div className="relative pl-8">
-                    <span className="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-zinc-900 dark:bg-zinc-100 ring-4 ring-white/60 dark:ring-zinc-900/60" />
-                    <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">DMCE, Airoli, Navi Mumbai</h3>
-                    <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                      2024 - Expected 2027
-                    </p>
-                  </div>
-
-                  <div className="relative pl-8">
-                    <span className="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-zinc-300 dark:bg-zinc-700 ring-4 ring-white/60 dark:ring-zinc-900/60" />
-                    <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">TPOLY, Kandivali, Mumbai</h3>
-                    <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                      2021 - 2024
-                    </p>
-                  </div>
+                  {education.map((item, idx) => (
+                    <div key={item.slug} className="relative pl-8">
+                      <span
+                        className={`absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full ring-4 ring-white/60 dark:ring-zinc-900/60 ${
+                          idx === 0
+                            ? "bg-zinc-900 dark:bg-zinc-100"
+                            : "bg-zinc-300 dark:bg-zinc-700"
+                        }`}
+                      />
+                      <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+                        {item.shortInstitution || item.institution}
+                      </h3>
+                      <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                        {item.period}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -74,66 +101,35 @@ export default function Home() {
               <div className="relative ml-2 space-y-8">
                 <span className="absolute left-0 top-2 bottom-1 w-[1px] bg-zinc-200 dark:bg-zinc-800" />
 
-                <div className="relative pl-8">
-                  <span className="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-zinc-900 dark:bg-zinc-100 ring-4 ring-white/60 dark:ring-zinc-900/60" />
-                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">IITI DRISHTI CPS FOUNDATION, IIT Indore</h3>
-                  <div className="mt-3 flex flex-col gap-4">
-                    <div>
-                      <p className="text-lg sm:text-xl font-semibold text-zinc-800 dark:text-zinc-200">
-                        Project Intern (AR/VR) <span className="font-light text-base text-zinc-500 dark:text-zinc-400">| Jun 2026 - Present</span>
-                      </p>
-                      <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                        Digital Healthcare Solutions in VR, Performance Optimization, 3D Assets Optimization, OpenXR, Rendering & Graphics in Unity.
-                      </p>
+                {groupedExperience.map((group, groupIdx) => (
+                  <div key={group.company} className="relative pl-8">
+                    <span
+                      className={`absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full ring-4 ring-white/60 dark:ring-zinc-900/60 ${
+                        groupIdx === 0
+                          ? "bg-zinc-900 dark:bg-zinc-100"
+                          : "bg-zinc-300 dark:bg-zinc-700"
+                      }`}
+                    />
+                    <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+                      {group.company}
+                    </h3>
+                    <div className="mt-3 flex flex-col gap-4">
+                      {group.roles.map((item) => (
+                        <div key={item.slug}>
+                          <p className="text-lg sm:text-xl font-semibold text-zinc-800 dark:text-zinc-200">
+                            {item.role}{" "}
+                            <span className="font-light text-base text-zinc-500 dark:text-zinc-400">
+                              | {item.period}
+                            </span>
+                          </p>
+                          <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                            {item.shortDescription}
+                          </p>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                </div>
-
-                <div className="relative pl-8">
-                  <span className="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-zinc-300 dark:bg-zinc-700 ring-4 ring-white/60 dark:ring-zinc-900/60" />
-                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Sorxn LLP</h3>
-                  <div className="mt-3 flex flex-col gap-4">
-                    <div>
-                      <p className="text-lg sm:text-xl font-semibold text-zinc-800 dark:text-zinc-200">
-                        Software Developer <span className="font-light text-base text-zinc-500 dark:text-zinc-400">| Jan 2026 - Jun 2026</span>
-                      </p>
-                      <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                        Backend Infrastructure, CI/CD, Cloudflare Tunneling, Supabase, JWT & RBAC Implementation.
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-lg sm:text-xl font-semibold text-zinc-800 dark:text-zinc-200">
-                        Software Developer Intern <span className="font-light text-base text-zinc-500 dark:text-zinc-400">| Dec 2025 - Jan 2026</span>
-                      </p>
-                      <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                        Full-stack Web Development, and Responsive UI Implementation.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="relative pl-8">
-                  <span className="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-zinc-300 dark:bg-zinc-700 ring-4 ring-white/60 dark:ring-zinc-900/60" />
-                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Vighnesh Inc.</h3>
-                  <div className="mt-3 flex flex-col gap-4">
-                    <div>
-                      <p className="text-lg sm:text-xl font-semibold text-zinc-800 dark:text-zinc-200">
-                        Jr. Unity Developer <span className="font-light text-base text-zinc-500 dark:text-zinc-400">| Jun 2024 - Dec 2025</span>
-                      </p>
-                      <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                        Aviation Simulations, Performance Conscious System Design, Custom RESTful Layer Engineering, UI/UX & Interaction Design.
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-lg sm:text-xl font-semibold text-zinc-800 dark:text-zinc-200">
-                        Software Developer Intern <span className="font-light text-base text-zinc-500 dark:text-zinc-400">| May 2023 - Jan 2024</span>
-                      </p>
-                      <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                        Performance Optimization, Hardware Feasibility Analysis, GPU Computing and Profiling.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </TileLink>
@@ -150,32 +146,16 @@ export default function Home() {
             </div>
 
             <div className="mt-8 space-y-8 flex-1 overflow-y-auto pr-4">
-              <div className="flex flex-col">
-                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 group-hover:text-black dark:group-hover:text-white transition-colors">
-                  Unearth
-                </h3>
-                <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                  Digital Forensics • Data Recovery • Filesystem Parsing
-                </p>
-              </div>
-
-              <div className="flex flex-col">
-                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 group-hover:text-black dark:group-hover:text-white transition-colors">
-                  AR Application: Homewise Vision
-                </h3>
-                <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                  Spatial Computing • AR Visualization • Furniture Placement
-                </p>
-              </div>
-
-              <div className="flex flex-col">
-                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 group-hover:text-black dark:group-hover:text-white transition-colors">
-                  SerenitySphere
-                </h3>
-                <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                  Immersive Systems • OpenXR • Hardware Optimization
-                </p>
-              </div>
+              {projects.map((project) => (
+                <div key={project.slug} className="flex flex-col">
+                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 group-hover:text-black dark:group-hover:text-white transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                    {project.keywords.join(" • ")}
+                  </p>
+                </div>
+              ))}
             </div>
           </TileLink>
         </BentoCard>
@@ -190,32 +170,16 @@ export default function Home() {
               </div>
 
               <div className="mt-8 space-y-8 flex-1 overflow-y-auto pr-4">
-                <div className="flex flex-col">
-                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
-                    Core Programming Languages
-                  </h3>
-                  <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                    C#, Python, JavaScript, SQL
-                  </p>
-                </div>
-
-                <div className="flex flex-col">
-                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
-                    XR Stack
-                  </h3>
-                  <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                    Unity, OpenXR, XR Interaction Toolkit, Meta XR SDK, Microsoft MRTK, AR Foundation, Vuforia Engine
-                  </p>
-                </div>
-
-                <div className="flex flex-col">
-                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
-                    Backend Stack
-                  </h3>
-                  <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
-                    FastAPI, Firebase, Supabase, Express.js
-                  </p>
-                </div>
+                {homeSkillCategories.map((category) => (
+                  <div key={category.slug} className="flex flex-col">
+                    <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+                      {category.title}
+                    </h3>
+                    <p className="mt-2 text-lg sm:text-xl font-normal text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                      {category.skills.join(", ")}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </TileLink>
