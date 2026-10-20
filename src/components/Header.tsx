@@ -113,21 +113,21 @@ export function Header() {
           <Link
             href="/experience"
             onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center px-3.5 py-2.5 rounded-xl text-base font-medium text-zinc-700 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors font-sans"
+            className="flex items-center px-3.5 py-2.5 rounded-xl text-base font-medium text-zinc-700 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors font-sans"
           >
             Experience
           </Link>
           <Link
             href="/projects"
             onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center px-3.5 py-2.5 rounded-xl text-base font-medium text-zinc-700 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors font-sans"
+            className="flex items-center px-3.5 py-2.5 rounded-xl text-base font-medium text-zinc-700 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors font-sans"
           >
             Projects
           </Link>
           <Link
             href="/blogs"
             onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center px-3.5 py-2.5 rounded-xl text-base font-medium text-zinc-700 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors font-sans"
+            className="flex items-center px-3.5 py-2.5 rounded-xl text-base font-medium text-zinc-700 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors font-sans"
           >
             Blogs
           </Link>
@@ -138,7 +138,7 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-base font-medium text-zinc-700 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors font-sans"
+              className="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-base font-medium text-zinc-700 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors font-sans"
             >
               <FaFileAlt size={16} className="text-zinc-500" />
               Resume
@@ -148,7 +148,7 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-base font-medium text-zinc-700 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors font-sans"
+              className="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-base font-medium text-zinc-700 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors font-sans"
             >
               <FaGithub size={16} className="text-zinc-500" />
               GitHub
@@ -158,7 +158,7 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-base font-medium text-zinc-700 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors font-sans"
+              className="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-base font-medium text-zinc-700 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors font-sans"
             >
               <FaLinkedin size={16} className="text-zinc-500" />
               LinkedIn

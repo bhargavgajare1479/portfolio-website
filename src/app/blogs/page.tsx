@@ -20,7 +20,7 @@ export default function BlogsPage() {
       <h1 className="font-heading text-5xl font-bold mb-4 tracking-tight text-zinc-900 dark:text-zinc-100">
         Blogs & Insights
       </h1>
-      <p className="text-xl text-zinc-600 dark:text-zinc-400 mb-12 max-w-3xl leading-relaxed font-normal">
+      <p className="text-xl text-zinc-700 dark:text-zinc-400 mb-12 max-w-3xl leading-relaxed font-normal">
         A place where there&apos;s no need to be formal
       </p>
 
@@ -31,7 +31,7 @@ export default function BlogsPage() {
         <h2 className="font-heading text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
           Technical Deep Dives Under Preparation!
         </h2>
-        <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed font-normal max-w-xl">
+        <p className="text-lg text-zinc-700 dark:text-zinc-400 leading-relaxed font-normal max-w-xl">
           I am currently finalizing detailed articles on various interesting topics.
         </p>
       </div>
