@@ -20,7 +20,7 @@ export function Header() {
     setMobileMenuOpen(false);
   }
 
-  // We only show section links if NOT on home page for desktop header
+  // We only show section links if NOT on home page (for both desktop and mobile)
   const showSectionLinks = !isHome;
 
   return (
@@ -56,6 +56,12 @@ export function Header() {
                   className="text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors font-sans"
                 >
                   Blogs
+                </Link>
+                <Link
+                  href="/contact"
+                  className="text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors font-sans"
+                >
+                  Contact
                 </Link>
               </>
             )}
@@ -110,29 +116,41 @@ export function Header() {
       {/* Mobile menu dropdown */}
       {mobileMenuOpen && (
         <div className="lg:hidden mt-1 mb-4 p-3 rounded-2xl border border-zinc-200/80 dark:border-zinc-800/80 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md shadow-lg flex flex-col gap-1 animate-in fade-in slide-in-from-top-2 duration-200">
-          <Link
-            href="/experience"
-            onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center px-3.5 py-2.5 rounded-xl text-base font-medium text-zinc-700 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors font-sans"
-          >
-            Experience
-          </Link>
-          <Link
-            href="/projects"
-            onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center px-3.5 py-2.5 rounded-xl text-base font-medium text-zinc-700 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors font-sans"
-          >
-            Projects
-          </Link>
-          <Link
-            href="/blogs"
-            onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center px-3.5 py-2.5 rounded-xl text-base font-medium text-zinc-700 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors font-sans"
-          >
-            Blogs
-          </Link>
+          {showSectionLinks && (
+            <>
+              <Link
+                href="/experience"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center px-3.5 py-2.5 rounded-xl text-base font-medium text-zinc-700 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors font-sans"
+              >
+                Experience
+              </Link>
+              <Link
+                href="/projects"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center px-3.5 py-2.5 rounded-xl text-base font-medium text-zinc-700 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors font-sans"
+              >
+                Projects
+              </Link>
+              <Link
+                href="/blogs"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center px-3.5 py-2.5 rounded-xl text-base font-medium text-zinc-700 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors font-sans"
+              >
+                Blogs
+              </Link>
+              <Link
+                href="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center px-3.5 py-2.5 rounded-xl text-base font-medium text-zinc-700 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors font-sans"
+              >
+                Contact
+              </Link>
+              <div className="border-t border-zinc-200 dark:border-zinc-800 my-1" />
+            </>
+          )}
 
-          <div className="border-t border-zinc-200 dark:border-zinc-800 my-1 pt-2 flex flex-col gap-1">
+          <div className="flex flex-col gap-1">
             <a
               href={RESUME_URL}
               target="_blank"
