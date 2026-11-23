@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { BentoCard } from "@/components/BentoCard";
 import { FaLink } from "react-icons/fa";
 import { TileLink } from "@/components/TileLink";
@@ -51,6 +52,21 @@ export default function Home() {
             <p className="mt-6 text-base sm:text-lg lg:text-xl font-normal text-zinc-700 dark:text-zinc-400 max-w-md leading-relaxed">
               An engineer who designs and builds systems with performance, architecture, and execution ownership.
             </p>
+            <div className="mt-6">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/60 dark:bg-zinc-900/40 text-xs sm:text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:border-zinc-400 dark:hover:border-zinc-600 transition-all group cursor-pointer"
+              >
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                </span>
+                <span>Available for freelance opportunities...</span>
+                <span className="transition-transform group-hover:translate-x-0.5 text-zinc-400 dark:text-zinc-500 group-hover:text-black dark:group-hover:text-white">
+                  →
+                </span>
+              </Link>
+            </div>
           </div>
         </BentoCard>
 
